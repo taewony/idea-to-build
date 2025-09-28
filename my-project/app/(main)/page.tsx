@@ -63,11 +63,7 @@ const ChallengeCard = ({ challenge }: { challenge: { id: number; title: string; 
 // --- Main Page Component ---
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-[#D4BFA9] bg-opacity-50" style={{
-      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)',
-      backgroundSize: '20px 20px'
-    }}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         {/* Hero Section */}
         <header className="text-center mb-16">
@@ -107,7 +103,13 @@ export default function Home() {
           </section>
         </main>
 
+        {/* Footer Button to Wall Page */}
+        <footer className="text-center mt-20">
+          <Link href="/wall" className="inline-block bg-gray-800 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105">
+            AI 잔소리 담벼락 구경가기 &rarr;
+          </Link>
+        </footer>
+
       </div>
-    </div>
   );
 }

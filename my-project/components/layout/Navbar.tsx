@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Home, MessageSquare, Trophy, Target, Settings } from 'lucide-react';
 
 const navLinks = [
-  { href: '/wall', label: 'AI 잔소리', icon: MessageSquare },
+  { href: '/wall', label: '잔소리 담벼락', icon: MessageSquare },
   { href: '/challenges', label: 'Open 도전', icon: Trophy },
   { href: '/goals', label: '나의 목표', icon: Target },
   { href: '/settings', label: '설정', icon: Settings },

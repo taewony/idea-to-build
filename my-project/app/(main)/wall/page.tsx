@@ -105,17 +105,12 @@ const WallPostCard = ({ post }: { post: typeof wallPosts[0] }) => {
 // --- Main Page Component ---
 export default function WallPage() {
   return (
-    <div className="w-full min-h-screen bg-[#D4BFA9] bg-opacity-50" style={{
-      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px)',
-      backgroundSize: '20px 20px'
-    }}>
-      <div className="max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          오늘의 AI 잔소리 담벼락
-        </h1>
-        <div className="space-y-8">
-          {wallPosts.map(post => <WallPostCard key={post.id} post={post} />)}
-        </div>
+    <div className="max-w-2xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        오늘의 AI 잔소리 담벼락
+      </h1>
+      <div className="space-y-8">
+        {wallPosts.map(post => <WallPostCard key={post.id} post={post} />)}
       </div>
     </div>
   );
