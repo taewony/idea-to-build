@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO 앱 - 담벼락 스타일</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gowun Dodum', sans-serif;
+            background-color: #D4BFA9; /* AI 잔소리 담벼락과 동일한 배경 */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, opacity 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        #fab-container {
+            cursor: move;
+        }
+        /* 할 일 완료 시 스타일 */
+        .completed span {
+            text-decoration: line-through;
+            color: #9ca3af; /* gray-400 */
+        }
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.2s;
+            color: #4b5563; /* gray-600 */
+        }
+        .filter-btn.active {
+            background-color: #374151; /* gray-700 */
+            color: white;
+        }
+        .filter-btn:not(.active):hover {
+            background-color: #e5e7eb; /* gray-200 */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-2xl mx-auto space-y-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800">나의 할 일 목록</h1>
+
+        <!-- 할 일 추가 카드 -->
+        <div class="card p-4 rounded-lg border border-gray-200">
+            <form id="todo-form" class="flex items-center space-x-4">
+                <input type="text" id="todo-input" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg" placeholder="새로운 할 일을 입력하세요..." required>
+                <button type="submit" class="flex-shrink-0 bg-indigo-600 text-white px-6 py-2 rounded-md font-bold hover:bg-indigo-700 transition-colors">추가</button>
+            </form>
+        </div>
+
+        <!-- 필터 버튼 -->
+        <div id="filter-buttons" class="flex justify-center space-x-2">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">할 일</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
+        </div>
+
+        <!-- 할 일 목록 -->
+        <div id="todo-list" class="space-y-4">
+            <!-- JS로 동적으로 할 일 아이템이 추가됩니다. -->
+        </div>
+    </div>
+
+    <!-- ===== START: Floating Action Button ===== -->
+    <div id="fab-container" class="fixed bottom-8 right-8 z-50">
+        <div class="w-16 bg-white rounded-full shadow-2xl flex flex-col items-center overflow-hidden">
+            <button onclick="alert('TODO 리스트 또는 로그인 화면으로 이동합니다.')" class="w-full h-16 flex items-center justify-center text-indigo-600 hover:bg-gray-100 focus:outline-none transition-colors duration-200 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+            </button>
+            <div class="w-10/12 h-0.5 bg-gray-300"></div>
+            <div onclick="alert('AI 비서 기능이 실행됩니다.')" class="group relative w-full h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200">
+                <span class="font-bold text-indigo-600 text-lg">AI</span>
+                <div class="absolute top-full mt-3 w-max px-3 py-1.5 bg-gray-900 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none left-1/2 -translate-x-1/2">
+                    AI 비서 건들기
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-b-4 border-b-gray-900"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END: Floating Action Button ===== -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const todoForm = document.getElementById('todo-form');
+            const todoInput = document.getElementById('todo-input');
+            const todoList = document.getElementById('todo-list');
+            const filterButtons = document.getElementById('filter-buttons');
+
+            let todos = JSON.parse(localStorage.getItem('todos')) || [
+                { id: 1, text: 'UI 디자인 시안 확인하기', completed: false },
+                { id: 2, text: 'Tailwind CSS 공부', completed: true },
+                { id: 3, text: 'Gemini API 연동 기능 개발', completed: false },
+            ];
+            let filter = 'all';
+
+            const saveTodos = () => {
+                localStorage.setItem('todos', JSON.stringify(todos));
+            };
+
+            const renderTodos = () => {
+                todoList.innerHTML = '';
+                const filteredTodos = todos.filter(todo => {
+                    if (filter === 'active') return !todo.completed;
+                    if (filter === 'completed') return todo.completed;
+                    return true;
+                });
+
+                if (filteredTodos.length === 0) {
+                    todoList.innerHTML = `
+                        <div class="text-center text-gray-500 py-4">
+                            <p>${filter === 'completed' ? '완료된 할 일이 없어요.' : '모든 할 일을 끝냈어요! 🎉'}</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                filteredTodos.forEach(todo => {
+                    const todoItem = document.createElement('div');
+                    todoItem.classList.add('card', 'todo-item', 'flex', 'items-center', 'p-4', 'rounded-lg', 'border', 'border-gray-200');
+                    if (todo.completed) {
+                        todoItem.classList.add('completed');
+                    }
+                    todoItem.dataset.id = todo.id;
+
+                    todoItem.innerHTML = `
+                        <input type="checkbox" class="h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" ${todo.completed ? 'checked' : ''}>
+                        <span class="flex-grow mx-4 text-gray-800 text-lg">${todo.text}</span>
+                        <button class="delete-btn text-gray-400 hover:text-red-500 text-2xl font-bold leading-none">&times;</button>
+                    `;
+                    todoList.appendChild(todoItem);
+                });
+            };
+
+            // 할 일 추가
+            todoForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newTodoText = todoInput.value.trim();
+                if (newTodoText) {
+                    todos.push({
+                        id: Date.now(),
+                        text: newTodoText,
+                        completed: false
+                    });
+                    saveTodos();
+                    renderTodos();
+                    todoInput.value = '';
+                }
+            });
+
+            // 할 일 완료/삭제 (이벤트 위임)
+            todoList.addEventListener('click', (e) => {
+                const target = e.target;
+                const todoItem = target.closest('.todo-item');
+                if (!todoItem) return;
+
+                const todoId = Number(todoItem.dataset.id);
+
+                if (target.type === 'checkbox') {
+                    const todo = todos.find(t => t.id === todoId);
+                    todo.completed = target.checked;
+                    saveTodos();
+                    renderTodos();
+                }
+
+                if (target.classList.contains('delete-btn')) {
+                    todos = todos.filter(t => t.id !== todoId);
+                    saveTodos();
+                    renderTodos();
+                }
+            });
+
+            // 필터링
+            filterButtons.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    filter = e.target.dataset.filter;
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderTodos();
+                }
+            });
+
+            renderTodos();
+        });
+
+        // FAB 드래그 기능
+        const fab = document.getElementById('fab-container');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        fab.addEventListener('mousedown', (e) => {
+            if (e.target.closest('button') || e.target.closest('[onclick]')) return;
+            isDragging = true;
+            offsetX = e.clientX - fab.getBoundingClientRect().left;
+            offsetY = e.clientY - fab.getBoundingClientRect().top;
+            fab.style.transition = 'none';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            fab.style.right = 'auto';
+            fab.style.bottom = 'auto';
+            fab.style.left = `${x}px`;
+            fab.style.top = `${y}px`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                fab.style.transition = '';
+                isDragging = false;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Custom Command: ds:extract
+
+You are an expert UX/UI designer and design system architect.
+
+This command analyzes a web page URL or a set of local images to extract a design system from them. The output will be a `style-guide.md` and a `tokens.json` file.
+
+## Usage
+
+`ds:extract [--url <URL>]`
+
+- **`--url <URL>`**: (Optional) The URL of the website to analyze.
+- **(No arguments)**: If no URL is provided, you will analyze the images found in the `D:\code\gemina\idea2build\images` directory.
+
+## Workflow
+
+1.  **Identify Input**: Check if a `--url` is provided.
+    - If yes, you will use the `web_fetch` tool to get the content of the URL.
+    - If no, you will look for images in the `D:\code\gemina\idea2build\images` directory. You can use `list_directory` to find them.
+
+2.  **Analyze Content**: Based on the fetched HTML/CSS or the images, perform the analysis as described below. You are a world-class UX/UI designer and a senior front-end developer specializing in creating design systems for **Next.js and Tailwind CSS**.
+
+3.  **Ponder**: Wrap your entire thought process in `<pondering>` tags. Think about the common patterns, the overall mood, hierarchy, and user experience conveyed by the source material.
+
+4.  **Generate `.\docs\style-guide.md`**: Create a comprehensive style guide in Markdown format. The content should follow the structure defined in `.\docs\extract-it.md`. Be very specific and provide actual HEX codes and values.
+
+5.  **Generate `.\docs\tokens.json`**: Based on the style guide, create a `tokens.json` file. This file should contain design tokens in a structured JSON format that can be easily parsed by other tools (like a script to generate CSS variables).
+
+    **Example `tokens.json` structure:**
+    ```json
+    {
+      "colors": {
+        "primary": "#HEXCODE",
+        "secondary": "#HEXCODE"
+      },
+      "typography": {
+        "fontFamily": "...",
+        "baseFontSize": "16px"
+      }
+    }
+    ```
+
+6.  **Provide Tailwind Config**: As a final step in the `style-guide.md`, provide the `theme.extend` object for `tailwind.config.js` based on the system you defined.
+
+---
+*This command is based on the prompt template from `.\docs\extract-it.md`.*

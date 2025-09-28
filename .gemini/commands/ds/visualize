@@ -1,0 +1,27 @@
+## Workflow
+
+1.  **Clean Up Existing Project (if any)**:
+    - Deletes the `<APP_PATH>` directory if it exists, ensuring a fresh start.
+
+2.  **Create New Next.js Project**:
+    - Executes `npx create-next-app@latest <APP_PATH> --typescript --eslint --tailwind --app --no-src-dir --use-npm --no-turbopack` non-interactively.
+
+3.  **Configure PostCSS (for Tailwind CSS v4)**:
+    - Updates `<APP_PATH>/postcss.config.mjs` to the correct configuration for Tailwind CSS v4:
+        ```javascript
+        const config = {
+          plugins: {
+            "@tailwindcss/postcss": {},
+          },
+        };
+        export default config;
+        ```
+
+4.  **Generate Style Guide**:
+    - Executes `node scripts/generate-styleguide.js <APP_PATH>`. This script reads `source/tokens.json` and generates:
+        - An updated `<APP_PATH>/app/globals.css` with CSS variables, utility classes, and component styles.
+        - The style guide page at `<APP_PATH>/app/style-guide/page.jsx`.
+        - A default `<APP_PATH>/app/page.jsx` if it doesn't exist.
+
+5.  **Final Output**:
+    - Confirms completion and provides instructions to start the dev server (`npm run dev` inside `<APP_PATH>`) and view the style guide at `http://localhost:3000/style-guide`.

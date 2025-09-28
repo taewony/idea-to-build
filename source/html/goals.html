@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 목표 관리 - 담벼락 스타일</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gowun Dodum', sans-serif;
+            background-color: #D4BFA9; /* 기존 앱과 동일한 배경 */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        #fab-container {
+            cursor: move;
+        }
+        /* 목표 달성 시 스타일 */
+        .achieved {
+            opacity: 0.6;
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .achieved .goal-title {
+            text-decoration: line-through;
+            color: #6b7280; /* gray-500 */
+        }
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            transition: all 0.2s;
+            color: #4b5563; /* gray-600 */
+        }
+        .filter-btn.active {
+            background-color: #374151; /* gray-700 */
+            color: white;
+        }
+        .filter-btn:not(.active):hover {
+            background-color: #e5e7eb; /* gray-200 */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-2xl mx-auto space-y-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800">나의 목표 관리</h1>
+
+        <!-- 목표 추가 카드 -->
+        <div class="card p-4 rounded-lg border border-gray-200">
+            <form id="goal-form" class="space-y-4">
+                <input type="text" id="goal-input" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg" placeholder="어떤 이상적인 상태를 꿈꾸나요?" required>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <label class="font-bold">유형:</label>
+                        <select id="goal-type" class="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <option value="short">단기 목표</option>
+                            <option value="long">장기 목표</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md font-bold hover:bg-indigo-700 transition-colors">목표 설정</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 필터 버튼 -->
+        <div id="filter-buttons" class="flex justify-center space-x-2">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="short">단기</button>
+            <button class="filter-btn" data-filter="long">장기</button>
+            <button class="filter-btn" data-filter="achieved">달성</button>
+        </div>
+
+        <!-- 목표 목록 -->
+        <div id="goal-list" class="space-y-4">
+            <!-- JS로 동적으로 목표 아이템이 추가됩니다. -->
+        </div>
+    </div>
+
+    <!-- ===== START: Floating Action Button ===== -->
+    <div id="fab-container" class="fixed bottom-8 right-8 z-50">
+        <div class="w-16 bg-white rounded-full shadow-2xl flex flex-col items-center overflow-hidden">
+             <button onclick="alert('TODO 리스트 또는 로그인 화면으로 이동합니다.')" class="w-full h-16 flex items-center justify-center text-indigo-600 hover:bg-gray-100 focus:outline-none transition-colors duration-200 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+            </button>
+            <div class="w-10/12 h-0.5 bg-gray-300"></div>
+            <div onclick="alert('AI 비서 기능이 실행됩니다.')" class="group relative w-full h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200">
+                <span class="font-bold text-indigo-600 text-lg">AI</span>
+                <div class="absolute top-full mt-3 w-max px-3 py-1.5 bg-gray-900 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none left-1/2 -translate-x-1/2">
+                    AI 비서 건들기
+                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-b-4 border-b-gray-900"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END: Floating Action Button ===== -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const goalForm = document.getElementById('goal-form');
+            const goalInput = document.getElementById('goal-input');
+            const goalType = document.getElementById('goal-type');
+            const goalList = document.getElementById('goal-list');
+            const filterButtons = document.getElementById('filter-buttons');
+
+            let goals = JSON.parse(localStorage.getItem('goals')) || [
+                { id: 1, text: '매일 30분씩 꾸준히 운동해서 건강한 신체 만들기', type: 'long', achieved: false },
+                { id: 2, text: '이번 주까지 사이드 프로젝트 기획서 완성하기', type: 'short', achieved: true },
+                { id: 3, text: '1년 안에 여행 경비 500만원 모으기', type: 'long', achieved: false },
+                { id: 4, text: '이번 달에 책 2권 완독하기', type: 'short', achieved: false },
+            ];
+            let filter = 'all';
+
+            const saveGoals = () => {
+                localStorage.setItem('goals', JSON.stringify(goals));
+            };
+
+            const renderGoals = () => {
+                goalList.innerHTML = '';
+                const filteredGoals = goals.filter(goal => {
+                    if (filter === 'achieved') return goal.achieved;
+                    if (filter === 'short') return !goal.achieved && goal.type === 'short';
+                    if (filter === 'long') return !goal.achieved && goal.type === 'long';
+                    return filter === 'all' ? true : !goal.achieved;
+                });
+
+                if (filteredGoals.length === 0) {
+                    goalList.innerHTML = `<div class="text-center text-gray-500 py-4"><p>설정된 목표가 없어요. 새로운 목표를 추가해 보세요!</p></div>`;
+                    return;
+                }
+
+                filteredGoals.forEach(goal => {
+                    const goalItem = document.createElement('div');
+                    goalItem.classList.add('card', 'goal-item', 'p-4', 'rounded-lg', 'border', 'border-gray-200');
+                    if (goal.achieved) {
+                        goalItem.classList.add('achieved');
+                    }
+                    goalItem.dataset.id = goal.id;
+
+                    const typeBadge = goal.type === 'short' 
+                        ? `<span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#단기</span>`
+                        : `<span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">#장기</span>`;
+                    
+                    const achievedIcon = goal.achieved ? `<span class="text-2xl">🎉</span>` : '';
+                    
+                    goalItem.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="flex items-center mb-2">
+                                    ${typeBadge}
+                                    ${achievedIcon}
+                                </div>
+                                <p class="goal-title text-gray-800 text-lg">${goal.text}</p>
+                            </div>
+                            <div class="flex-shrink-0 ml-4 space-x-2">
+                                ${!goal.achieved ? '<button class="achieve-btn text-2xl" title="목표 달성">✔️</button>' : ''}
+                                <button class="delete-btn text-gray-400 hover:text-red-500 text-2xl font-bold leading-none" title="삭제">&times;</button>
+                            </div>
+                        </div>
+                    `;
+                    goalList.appendChild(goalItem);
+                });
+            };
+
+            goalForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newGoalText = goalInput.value.trim();
+                if (newGoalText) {
+                    goals.push({
+                        id: Date.now(),
+                        text: newGoalText,
+                        type: goalType.value,
+                        achieved: false
+                    });
+                    saveGoals();
+                    renderGoals();
+                    goalInput.value = '';
+                }
+            });
+
+            goalList.addEventListener('click', (e) => {
+                const target = e.target;
+                const goalItem = target.closest('.goal-item');
+                if (!goalItem) return;
+                const goalId = Number(goalItem.dataset.id);
+                
+                if (target.classList.contains('achieve-btn')) {
+                    const goal = goals.find(g => g.id === goalId);
+                    goal.achieved = true;
+                    saveGoals();
+                    renderGoals();
+                }
+
+                if (target.classList.contains('delete-btn')) {
+                    goals = goals.filter(g => g.id !== goalId);
+                    saveGoals();
+                    renderGoals();
+                }
+            });
+
+            filterButtons.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    filter = e.target.dataset.filter;
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderGoals();
+                }
+            });
+
+            renderGoals();
+        });
+
+        // FAB 드래그 기능 (from todo app)
+        const fab = document.getElementById('fab-container');
+        let isDragging = false, offsetX, offsetY;
+        fab.addEventListener('mousedown', (e) => {
+            if (e.target.closest('button') || e.target.closest('[onclick]')) return;
+            isDragging = true;
+            offsetX = e.clientX - fab.getBoundingClientRect().left;
+            offsetY = e.clientY - fab.getBoundingClientRect().top;
+            fab.style.transition = 'none'; e.preventDefault();
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const x = e.clientX - offsetX, y = e.clientY - offsetY;
+            fab.style.right = 'auto'; fab.style.bottom = 'auto';
+            fab.style.left = `${x}px`; fab.style.top = `${y}px`;
+        });
+        document.addEventListener('mouseup', () => { if (isDragging) { fab.style.transition = ''; isDragging = false; }});
+    </script>
+
+</body>
+</html>
