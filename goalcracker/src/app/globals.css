@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B4513;
+  --color-background-light: #F5DEB3;
+  --color-background-dark: #6B4226;
+  --color-text-light: #4A2C2A;
+  --color-text-dark: #F5F5DC;
+  --color-accent: #D2691E;
+  --color-card-light: #DEB887;
+  --color-card-dark: #A0522D;
+
+  --font-display: "Noto Sans KR", sans-serif;
+  --font-handwriting: "Gowun Dodum", sans-serif;
+
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-wood: 0 4px 6px -1px rgba(74, 44, 42, 0.4), 0 2px 4px -2px rgba(74, 44, 42, 0.3);
+  --shadow-wood-lg: 0 10px 15px -3px rgba(74, 44, 42, 0.4), 0 4px 6px -4px rgba(74, 44, 42, 0.3);
+  --shadow-card: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--color-background-light);
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  font-family: var(--font-display);
+  color: var(--color-text-light);
+}
+
+.dark body {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+}

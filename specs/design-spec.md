@@ -19,48 +19,39 @@
 
 ## 3. 프로젝트 구조 (Next.js App Router)
 
+현재 프로젝트 구조는 초기 설정 단계에 있으며, 핵심 라우팅 및 기본 컴포넌트가 자리 잡고 있습니다. 제안되었던 모든 기능이 아직 구현되지 않았습니다.
+
 ```
 /my-project
 ├── /app
-│   ├── /api
-│   │   └── /... (서버 사이드 로직을 위한 API Routes)
-│   ├── /(auth)
-│   │   ├── /login
-│   │   └── /signup
 │   ├── /(main)
-│   │   ├── /@modal/(.)ai-nudge/page.tsx  (모달을 위한 인터셉트 라우트)
-│   │   ├── /challenges/page.tsx
-│   │   ├── /goals/page.tsx
-│   │   ├── /settings/page.tsx
-│   │   ├── /goals/[goalId]/tasks/page.tsx
-│   │   ├── /wall/page.tsx
-│   │   ├── layout.tsx                (Navbar를 포함한 메인 앱 레이아웃)
-│   │   └── page.tsx                  (대시보드)
-│   ├── /ai-nudge/page.tsx            (모달의 독립 실행 페이지)
+│   │   ├── /challenges
+│   │   │   └── page.tsx
+│   │   ├── /goals
+│   │   │   ├── /[goalId]/tasks
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── /settings
+│   │   │   └── page.tsx
+│   │   ├── /wall
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx                (메인 앱 레이아웃)
+│   │   └── page.tsx                  (메인 대시보드 페이지)
+│   ├── /style-guide
+│   │   └── page.jsx                  (UI 컴포넌트 및 스타일 가이드)
 │   ├── globals.css
 │   └── layout.tsx                    (루트 레이아웃)
 ├── /components
-│   ├── /auth
-│   ├── /forms
-│   ├── /layout
-│   │   ├── Navbar.tsx
-│   │   └── FAB.tsx                   (플로팅 액션 버튼)
-│   └── /ui                           (Shadcn/UI 컴포넌트: Button, Card 등)
-│   └── /shared                       (기능 전반에서 재사용되는 컴포넌트)
-│       ├── GoalCard.tsx
-│       ├── ChallengeCard.tsx
-│       ├── TaskItem.tsx
-│       └── WallPost.tsx
+│   └── /layout
+│       └── Navbar.tsx                (상단 네비게이션 바)
 ├── /lib
-│   ├── /actions.ts                   (서버 액션)
-│   ├── /db.ts                        (데이터베이스 클라이언트)
-│   ├── /hooks.ts                     (커스텀 React 훅)
-│   └── /utils.ts                     (유틸리티 함수)
-├── /public
-└── tailwind.config.ts
+│   └── /store.ts                     (Zustand 상태 관리 스토어)
+└── ... (package.json, next.config.ts 등 기타 설정 파일)
 ```
 
 ## 4. 데이터 모델 (Supabase 테이블)
+
+다음은 애플리케이션 기능을 지원하기 위해 **제안되는** 데이터베이스 스키마입니다. 실제 구현 시 변경될 수 있습니다.
 
 - **`users`**: 사용자 정보 저장 (id, email, name, avatar_url).
 - **`ai_settings`**: 각 사용자의 AI 설정 저장.
@@ -78,68 +69,62 @@
 - **`wall_posts`**: "AI 잔소리 담벼락"의 게시물 저장.
   - `id`, `user_id`, `goal_id` (FK to `goals.id`), `content`, `ai_character`, `post_type` ('nag' | 'praise'), `created_at`
 
-## 5. 페이지 및 컴포넌트 상세 설계
+## 5. 페이지 및 컴포넌트 상세 설계 (현재 기준)
 
-모든 주요 페이지((main) 라우트 그룹)는 상단 네비게이션 바(Navbar)를 포함하는 공통 레이아웃을 공유합니다. 이를 통해 일관된 사용자 경험을 제공합니다.
+현재 파일 구조를 기반으로 각 페이지의 목적과 필요한 컴포넌트를 재정의합니다. 아직 구현되지 않은 컴포넌트는 명시적으로 표시합니다.
 
-### 5.1. 메인 대시보드 (`/`)
+### 5.1. 메인 대시보드 (`/(main)/page.tsx`)
 
-- **목적:** 사용자의 현재 상태, 인기 목표, 주요 메뉴를 한눈에 보여줍니다.
+- **목적:** 사용자의 현재 상태, 인기 목표, 주요 메뉴를 한눈에 보여주는 진입점.
 - **컴포넌트:**
-  - `Navbar`: 메인 네비게이션.
-  - `HeroSection`: 환영 메시지 및 앱 소개.
-  - `PopularChallenges`: `/challenges` 페이지의 인기 챌린지 Top 3를 표시.
-  - `MyGoalsPreview`: `/goals`에 있는 내 목표 중 활성화된 목표 3-5개를 미리 보여줌.
-  - `FAB`: 홈 이동 및 AI Nudge 기능에 빠르게 접근할 수 있는 플로팅 액션 버튼.
+  - `Navbar`: 메인 네비게이션 (구현됨).
+  - `HeroSection`: 환영 메시지 및 앱 소개 (구현 필요).
+  - `PopularChallenges`: 인기 챌린지 목록 (구현 필요).
+  - `MyGoalsPreview`: 내 목표 미리보기 (구현 필요).
 
-### 5.2. AI 잔소리 담벼락 (`/wall`)
+### 5.2. AI 잔소리 담벼락 (`/wall/page.tsx`)
 
 - **목적:** 모든 사용자를 대상으로 AI가 생성한 "잔소리"와 "칭찬"을 보여주는 소셜 피드.
-- **컴포넌트:**
-  - `WallPost`: 단일 게시물을 표시하는 카드 컴포넌트. `wall.html`에서 본 것처럼 `ai_character`('critic' vs 'praiser')에 따라 아바타, 색상, 텍스트 정렬 등 스타일이 달라짐.
-  - `WallFeed`: `WallPost` 컴포넌트 목록을 가져와 벽돌 레이아웃(masonry)으로 렌더링.
+- **필요 컴포넌트:**
+  - `WallPost`: 단일 게시물을 표시하는 카드 컴포넌트 (구현 필요).
+  - `WallFeed`: `WallPost` 목록을 벽돌 레이아웃으로 렌더링하는 컨테이너 (구현 필요).
 
-### 5.3. 도전 목록 (`/challenges`)
+### 5.3. 도전 목록 (`/challenges/page.tsx`)
 
 - **목적:** 사용자가 참여할 수 있는 모든 공식 챌린지를 나열합니다.
-- **컴포넌트:**
-  - `ChallengeCard`: `challenges.html`의 디자인을 기반으로 제목, D-Day, 참여자 수, "내 목표로 추가" 버튼을 포함한 상세 카드.
-  - `ChallengeList`: `ChallengeCard` 컴포넌트 목록을 가져와 표시.
+- **필요 컴포넌트:**
+  - `ChallengeCard`: 챌린지 정보를 표시하는 카드 컴포넌트 (구현 필요).
+  - `ChallengeList`: `ChallengeCard` 목록을 표시하는 컨테이너 (구현 필요).
 
-### 5.4. 나의 목표 (`/goals`)
+### 5.4. 나의 목표 (`/goals/page.tsx`)
 
 - **목적:** 사용자가 자신의 단기 및 장기 목표를 생성하고 관리합니다.
-- **컴포넌트:**
-  - `GoalForm`: `goals.html`처럼 새 목표를 추가하는 폼.
-  - `GoalCard`: 목표를 표시하는 카드. 완료 및 삭제 버튼 포함. 달성된 목표는 스타일이 변경됨.
-  - `FilterButtons`: '전체', '단기', '장기', '달성'으로 목표를 필터링하는 버튼.
-  - `GoalList`: 필터링 상태를 관리하고 `GoalCard` 컴포넌트 목록을 렌더링.
+- **필요 컴포넌트:**
+  - `GoalForm`: 새 목표를 추가하는 폼 (구현 필요).
+  - `GoalCard`: 목표를 표시하는 카드 (구현 필요).
+  - `GoalList`: `GoalCard` 목록을 렌더링하는 컨테이너 (구현 필요).
 
-### 5.5. 목표별 할 일 관리 (`/goals/[goalId]/tasks`)
+### 5.5. 목표별 할 일 관리 (`/goals/[goalId]/tasks/page.tsx`)
 
 - **목적:** 특정 목표 하나에 대한 할 일 목록을 관리하는 전용 페이지.
-- **컴포넌트:**
-  - `GoalHeader`: 상위 목표의 제목을 표시.
-  - `TaskForm`: 새 할 일을 추가하는 간단한 폼.
-  - `TaskItem`: `tasks.html`처럼 체크박스, 텍스트, 삭제 버튼이 있는 단일 할 일 항목.
-  - `TaskList`: `TaskItem` 컴포넌트 목록을 렌더링하고 필터링(전체, 진행 중, 완료)을 처리.
+- **필요 컴포넌트:**
+  - `GoalHeader`: 상위 목표의 제목을 표시 (구현 필요).
+  - `TaskForm`: 새 할 일을 추가하는 폼 (구현 필요).
+  - `TaskItem`: 단일 할 일 항목 (구현 필요).
+  - `TaskList`: `TaskItem` 목록을 렌더링하는 컨테이너 (구현 필요).
 
-### 5.6. AI 비서 설정 (`/settings`)
+### 5.6. AI 비서 설정 (`/settings/page.tsx`)
 
-- **목적:** 사용자가 자신의 AI 비서를 커스터마이징합니다.
-- **컴포넌트:**
-  - `CharacterSelector`: AI 페르소나("냉혹한 비판가", "달콤한 칭찬가" 등)를 선택하는 라디오 버튼 또는 카드 컴포넌트.
-  - `ToneSelector`: AI의 말투를 미세 조정하는 슬라이더 또는 드롭다운.
-  - `SettingsForm`: 사용자 설정을 저장하는 폼.
+- **목적:** 사용자가 자신의 AI 비서의 페르소나, 말투 등을 커스터마이징합니다.
+- **필요 컴포넌트:**
+  - `CharacterSelector`: AI 페르소나 선택 UI (구현 필요).
+  - `ToneSelector`: AI 말투 조절 UI (구현 필요).
+  - `SettingsForm`: 설정을 저장하는 폼 (구현 필요).
 
-### 5.7. AI Nudge 모달 (`/ai-nudge`)
+### 5.7. 스타일 가이드 (`/style-guide/page.jsx`)
 
-- **목적:** AI로부터 랜덤 조언이나 "잔소리"를 제공하는 모달.
-- **구현:** Next.js의 [Intercepting Routes](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes) 기능을 사용하여 구현.
-  - `FAB` 클릭 시 `/ai-nudge`로 이동.
-  - 이 라우트는 `/(main)/@modal/(.)ai-nudge/page.tsx`에 의해 가로채져 모달 오버레이를 렌더링.
-  - 모달에는 AI가 생성한 메시지와 "담벼락에 게시" 버튼이 포함됨.
-  - 페이지를 직접 새로고침하는 등 직접 접근 시에는 `/ai-nudge/page.tsx`가 전체 페이지로 렌더링됨.
+- **목적:** 프로젝트에서 사용되는 UI 컴포넌트, 색상, 타이포그래피 등 디자인 시스템을 시각적으로 보여주는 페이지.
+- **내용:** 현재 프로젝트에 적용된 스타일 요소들을 확인하고 테스트하는 공간으로 활용.
 
 ## 6. 구현 계획 (단계별)
 

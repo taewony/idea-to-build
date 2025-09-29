@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+      --brand-color: #8B4513;--background-light: #F5DEB3;--background-dark: #6B4226;--text-light: #4A2C2A;--text-dark: #F5F5DC;--accent-color: #D2691E;--card-bg-light: #DEB887;--card-bg-dark: #A0522D;}
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "var(--brand-color)",
+            "background-light": "var(--background-light)",
+            "background-dark": "var(--background-dark)",
+            "text-light": "var(--text-light)",
+            "text-dark": "var(--text-dark)",
+            "accent": "var(--accent-color)",
+            "card-light": "var(--card-bg-light)",
+            "card-dark": "var(--card-bg-dark)",
+          },
+          fontFamily: {
+            "display": ["Noto Sans KR", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'wood': '0 4px 6px -1px rgba(74, 44, 42, 0.4), 0 2px 4px -2px rgba(74, 44, 42, 0.3)',
+            'wood-lg': '0 10px 15px -3px rgba(74, 44, 42, 0.4), 0 4px 6px -4px rgba(74, 44, 42, 0.3)',
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] bg-repeat">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">GoalCracker</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">My Goals</a>
+<a class="text-sm font-medium text-primary font-semibold" href="#">Challenges</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">AI Wall</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">AI Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">
+                notifications
+              </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_-s0Rw0qvpKVbH6Iqoq4gj07hcaBxJ8r58aiIT2S7JgUwgl31YznffoSkrnUDI8dy_W8rcM-Y7EBYxmE8uetFv5OZnFs6sbF1KMuLbh-n70cJ4wecjnBdxht4ko0otdf8Z9-vHMIuXWPSto8fRSGsl1UWQAQ830gUUrp_UVOMIP1dquJ-m0jpaGo9aPUZnzxlfZE3RgeRy3j7GG5vyIqVW0HOm6Abe-E4GGW2GL7z6fwzCipKdWvRE3wCgJJMOmtfYL2kUSOVrVK0");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Official Challenges</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Join challenges to achieve your goals with others and stay motivated.</p>
+</div>
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Active Challenges</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCA4qR2qLzXstxnBOz848McktBiqVhWstrrnhFTqWJkJIFyfhtfEgxHk7ggGVk8CIn29Te3v8s8JnbrF7N1kDtv0qqFkbQV71etJjsZ5fwabIeMKV2GcQ1CcL_ecHoWV9kC_2XifWXZ9-TDgp7c-adRXwIwGOLbIYEOM8y5JRKaQeDDtw9hGysTjFSuwpSGPyeUBhtqbFNuHMfMGKnwJjYLETTQzLUIQ_NCTKZVOoxNEATYVPQJLl_Kw2_z5Lbt-NNgCerfJeppDbp9");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Mindful Moments</h3>
+<p class="text-gray-200 text-sm">Daily mindfulness exercises</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                    Join Challenge
+                  </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgIkzbckmcFbIZJWi7NyCdauMoUaw8cdziGHrj71KkTWoOuGVf_04QFiAmmK0ulCwkXP29FYaJwpOucEGY6kAP1G1rqLe5hWGR8OtBIYjW0BHSjzpoXnLQYQ16C_1ODvWu7nPrtoDef4r4Dld4gyd8ql-xo6UBM4E86ol0Nte_hbCk7mXPPOD7F_m0y0L3Y6fl_-ctVWt_8oqXoarwGww4jTb4i5BJRNh5LxPpoV0i5D0zpUfka_lpJGB0iXi8ef8fMBBNvkUsshBp");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Fitness Fusion</h3>
+<p class="text-gray-200 text-sm">Mix of cardio and strength</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                        Join Challenge
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdC7bGHBn_mupIHG21-jpr86ThD2Zxhdis_IkMGZ_FxZcfzdz_DYozllXNKE5jRAfwlPvgMIQWuGuhGZ8L4MtDNTPnSJ9FogrUt3Fp6tn6m_cVcMdcy4P2AoXMX6GwGV1RSDLzzemimrGuA01zkq7WAolQsnojN4V1AlGqK79prnoD4xknomjDQy6KimTYz_muY_g_4z3K81wrdUJjVHda9FW_Tr1R62aJnNxfxy-UZUue8MHg5T7K-GU8W-NVj6kdp5z8kVQyG0Dk");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Productivity Powerhouse</h3>
+<p class="text-gray-200 text-sm">Boost your daily output</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                        Join Challenge
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXtM-ejW5zy3EyvSmITa5imbAnNaBMBh-AbGKao-4WXmh1_hcEYTCsaufMl-kTi-L78WvEuHHJ5tApfpNkT_fG-g_jMR-waf0QpodSNmedVP1IlsHBBpfoV112COtGjahNeKfWdwW5CcuHrXvAROm2vTf1KU7TP5ZLtlpcn48jMsBtrvS_rY4p_95a_3gBv_6687MLB_YNXr1psGqS_lr7POF8y-rlGOX7Kqjf1Mv9TQ0m1M2l2chK_BYCtmSXv5stJHFnMINKUSfl");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Creative Spark</h3>
+<p class="text-gray-200 text-sm">Explore your creative side</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                        Join Challenge
+                      </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Upcoming Challenges</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden opacity-70">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4JkF5fkValqfqhcM-F88zD2eNAcdJyGQ5kZefb03DyTgw_MFcb8qVcHvGn4lblAY_xMSYRfNgijAE3besqlhEFyDw8RXSB9vOxJtipEEtQ2zGASNsMuPEZp9CJ79MAm3SDDvoIE5pmYK7BGHg5el6VzDW16wJm4UDs7ir5lP_hXWBaT8ua6cbiX3o8XbmV5S1t8Fuz1ZgYrYF75gd-TeF6Y_Ktf0Zj8BiwT70fmpp8ElYf9YiXNxNhiMwZt0cy5CqFTAN5BE5TZw3");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Financial Freedom</h3>
+<p class="text-gray-200 text-sm">Save and invest wisely</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                        Coming Soon
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden opacity-70">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXFZpv-ts6Y1TchVbSg7FH5tY6A27aP12r5bY2f-riCjc6jAEvUHCnZNgIP8J99fmb0ap-NpFAU8J3a1uuYfEJeuVz4CE-zxaLQVFtr6q9sqZ8s_WHJcaKncYsdYMlCuMnDcUgJQLT2iIyiA1v3LnujOaDeOSm6KcMreiR9rSZePrOhLEUDMx53-MRrwLYnXRpqwlp0fBawemmCvzN8RaqCv7F8jKiuiBpNXcoGc6dHGCRg3TIE1IN89do4GrqpPhjlLNEvLHwE7DH");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Healthy Eating Habits</h3>
+<p class="text-gray-200 text-sm">Balanced diet and meal planning</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                        Coming Soon
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden opacity-70">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-EYDD_1Wt7JIgVJjh5r0Tf-mX725yMJplevfhkoU2txh5U-zNNKGoWuGoJzLDao3w-lxPBEhxaSAETutwDkr5tbR7tntUHXIuPU89-i9jdSKtjMwwFwstJOfH9gzPlDjR8-vJPSLho57EYBVnEQ49RXbzOANhCTcVJjzCJqn5hhzrdnvr0l2GtKmPzjKujwmmwvqQaVdPJow-tfsjaPg3MvUIfcUVdIClU8nZanFcJ3Fx-XyLnLMgDZZmr48wK5DJJYVXwzdh-1tM");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Language Learning</h3>
+<p class="text-gray-200 text-sm">Learn a new language</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                        Coming Soon
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white/50 dark:bg-white/10 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden opacity-70">
+<div class="relative w-full aspect-square">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-t-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8wM2tMPD-XCYAwOfCi0wwU56Ov0VmVSYGQmI2HLrksqlscWZg9z6UEMDj4IxxxzInjmgrL9Dyi9DNLwVucviMqbsygkcx5nM3rIpI_7heUPg4HwsVPZiVCrJEr6EBr_MhYr0lLoARxOMyr6wgHaYhbZWBJUTkJRDeFZNX8t83y-irE7RZuwmc18eQ041B1waBxBBNpr2-VMzB6xOQ9w1c5t2bej4By_iVRZWELqZ-qCuZlFFGY1e3jNj6iZOoisUL97-Ra73R0m4v");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">Reading Challenge</h3>
+<p class="text-gray-200 text-sm">Read a book a week</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="mt-auto">
+<button class="w-full bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                        Coming Soon
+                      </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

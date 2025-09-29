@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nugget - 도전 과제</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans+KR:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+      --brand-color: #8B4513;--background-light: #F5DEB3;--background-dark: #6B4226;--text-light: #4A2C2A;--text-dark: #F5F5DC;--accent-color: #D2691E;--card-bg-light: #DEB887;--card-bg-dark: #A0522D;}
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "var(--brand-color)",
+            "background-light": "var(--background-light)",
+            "background-dark": "var(--background-dark)",
+            "text-light": "var(--text-light)",
+            "text-dark": "var(--text-dark)",
+            "accent": "var(--accent-color)",
+            "card-light": "var(--card-bg-light)",
+            "card-dark": "var(--card-bg-dark)",
+          },
+          fontFamily: {
+            "display": ["Noto Sans KR", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'wood': '0 4px 6px -1px rgba(74, 44, 42, 0.4), 0 2px 4px -2px rgba(74, 44, 42, 0.3)',
+            'wood-lg': '0 10px 15px -3px rgba(74, 44, 42, 0.4), 0 4px 6px -4px rgba(74, 44, 42, 0.3)',
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] bg-repeat">
+<div class="flex flex-col min-h-screen bg-background-light/90 dark:bg-background-dark/90">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">GoalCracker</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">My Goals</a>
+<a class="text-sm font-medium text-primary font-semibold" href="#">Challenges</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">AI Wall</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">AI Settings</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">
+                notifications
+              </span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_-s0Rw0qvpKVbH6Iqoq4gj07hcaBxJ8r58aiIT2S7JgUwgl31YznffoSkrnUDI8dy_W8rcM-Y7EBYxmE8uetFv5OZnFs6sbF1KMuLbh-n70cJ4wecjnBdxht4ko0otdf8Z9-vHMIuXWPSto8fRSGsl1UWQAQ830gUUrp_UVOMIP1dquJ-m0jpaGo9aPUZnzxlfZE3RgeRy3j7GG5vyIqVW0HOm6Abe-E4GGW2GL7z6fwzCipKdWvRE3wCgJJMOmtfYL2kUSOVrVK0");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">공식 도전 과제</h1>
+<p class="mt-4 text-lg text-text-light/80 dark:text-text-dark/80">다른 사람들과 함께 목표를 달성하고 동기를 유지하세요.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="마음챙김" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDml2Q4tTLJsb3G3ftHtmGNsYUU3lDa0c8hv50YQc1tbkmvtMNavMf6fGTmZ6ZLMS76-smHOewlhRHYr6yArQGDX2heo0RU5q-a-PM8iMA68khg0PTtS70nHVTgF9VPAXH0Oidy5VIDgzFb37mnr7tCmekn20cy3jKBnISrRSRwpk9ZJIuqT9PoZLo9dpn9JjBFrvLrL0UNbDeQw5ovYSAVN7r_OSZLzi9nXZmSW4L7kQMVcUdUlv1y4lhNsWxzFIP2MbNw36pREAfL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">고요한 마음 30일</h3>
+<p class="text-gray-200 text-sm">매일 명상으로 스트레스 줄이기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 10분간의 명상 세션을 통해 마음의 평화를 찾고 집중력을 높이세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                    참여하기
+                  </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="운동" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5gXeskUIl0LGbsj_lvAZdKlmY8W-OfQTB2Arb5-q56hmbfUhUmEXU99PC_oOfjGLgvfvhF6JEhxOvDo-ug8vVvPS_uku5ghMtgb8jd3xpuhO4oBnSEbMSdtwAgaKhP6nbRTbr8EoQEJB4dS19-oZAul2x5jPzaXsNiTwzfqhzHl9PQVwL2ZBHaW5H7XmFW0GDLnUb0NOaXLif49Znfeudqhx3XSX7Xjbs6NSgRyCmi6_2c7IoTvXTr4beidW-swzjy3xw38AjRKja"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">매일 30분 운동 챌린지</h3>
+<p class="text-gray-200 text-sm">건강한 습관 만들기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">어떤 운동이든 매일 30분씩 꾸준히 하여 체력을 증진하고 활력을 되찾으세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="독서" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJoY48xfOEUb6E8IDE8wrOxYi18DBN-54uxzs65-RHOXHGgqPBIXlin-CrEPdKAWchTeTddqra4oRBoifRyrcvs_k5A2ukGewqj4ys2eMpwuAth8wXRLPPZv6b1Tofj2vlcTBBQvgaXS9RwAaTj6BoKtrJ1p9EOJieUFg_ZPK0Ex36yI5Ari5MKUoI5--ApQafM08LbdUA5-6bTGgU3igPsYUtG3HyxyOnQ0nPsI3E3_QlR1cZciGWl8CAsg8dqMCw8plwGy8OZcUJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">한 달에 책 4권 읽기</h3>
+<p class="text-gray-200 text-sm">지식의 지평을 넓히세요</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">한 주에 한 권씩, 다양한 분야의 책을 읽으며 새로운 지식과 영감을 얻어보세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="코딩" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcNWPfwvearHrAI4XePpGOGmuBTQr_fEldG5BfiJs7Doqks3JIrXBy8z0eu4cQfxAjtzSBLNPRg9OLuOLRypwwAgaVUpYwUHMmLGtNmjMMe5-bYukZ4oot1EGPQemQE59Fnz9D2AMFh0tCS9Il09XyNG6Yh-_wnPppE9ZizhtIWTwp2qFntWidobIA_MmSbFGUfHb6pIrNDsSbFXkvq4YVrxaZPx69Rueev5lFl4SiTwFjVk6pRnR2cvDW07dVIyCcEpagHEISk6gi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">알고리즘 마스터</h3>
+<p class="text-gray-200 text-sm">매일 코딩 문제 풀기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 최소 한 개의 알고리즘 문제를 풀며 코딩 실력과 문제 해결 능력을 향상시키세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="새벽 기상" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8s7ykeWa7QJ5zM2qOMQk5jIDfmxqEOgefk8ZOgZSKOlegD6Tf1QWMRTdopFztDsSgKQUWgcWHi4mdyvyJaX5JamUmLOYWHlLZ8d2kK0O7Kc9bcaKvQtu-EO6eA_So7jErFWu61pAiynY8mZ6twL-kLB4TokaGiLXdjCJQPhnoGc5fYGLT5I9jnGKaKgHHmk6KX54HYQruUy6-JDuOVbFavO6974Ca9yS1GESMPFkbKq8DMSYqJ6B0bY0OHXGPu_Utw_5LgoKJ_6C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">미라클 모닝 챌린지</h3>
+<p class="text-gray-200 text-sm">아침 6시 기상하기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">하루를 더 일찍 시작하여 나만의 시간을 확보하고 생산성을 극대화하세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="물 마시기" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHtX0O07QmkjlVJbBkRyPFo7AooEok0zCNe0OLTvkb4BC6qNncpA2qtKHJq_jBWJLcBF_aRWIOUwzcsvvGEkU833C6aUs9Ap6PIejzp5f256yShe-G4pYWLJDLPRroe1iFkt65RLfsSTd_Z-zVJn19uvL0DvhVOeFsyeh0qlXueawtbHyaiZ7YTK92t0MsZb5MVZTceutVKBSsvEA1qUeeo3m1Dcd_stIMshDHs9CHzXJeTuKXtipNcUFbmOu0cFYbUFZRXfRTTZ0O"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">수분 충전! 하루 2L</h3>
+<p class="text-gray-200 text-sm">매일 물 2리터 마시기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">충분한 수분 섭취로 건강한 신체와 맑은 피부를 유지하세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="언어 학습" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvF_ZnAUKNAAF3zSI5ZAjepLos4Qk2uki_UfPjU9YPMaTeAqI0kIwlBWZgVLx7ai9SAClhsx82ZOfUiXpd3nTqPZz2UvFBZa9DiRkMBBwEf5cCrxQ28-QG4zRzyrFi3UUqv_BI2vwasvJI9Yg8h8mZI9Fn5j1NsIyn1plQCeN_WHr3aVitC4hBoYErwtjrx29Hj8ULT78Ngmts_aod_jB5hIVZVAlpegncvbIKtvfhxnkbmhIFpmj7cA90DO3UvDV6bXbViNxzYJ1U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">외국어 정복 프로젝트</h3>
+<p class="text-gray-200 text-sm">매일 20분 외국어 공부</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">새로운 언어를 배우며 다른 문화를 이해하고 소통의 폭을 넓혀보세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden">
+<div class="relative w-full aspect-video">
+<img alt="감사 일기" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEBCra1vGm3cii9eoXFDNAkjqLQEwZ16G8aLWL2uUaSsHvHOHXDzXLuP7VrwuqqzveMDVC55C4-niFNmPCOZb6zBpAiDnczoguxecLNt_W5hlR6hGbCytJAs7Ye8HJDgkOYZtsMA3ctbF0TrE14xDVo5c2rlSmDCQDZcxN3EctbzNH5TNG6pLvuns0JVXVJkJ8rgwcsceIoIhxlyCh2KVuoJuHicuPD-SFevSH3qzbhyJi7ev-VHMkMDERqXweW5Jn6YrRmzMqGIgS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">하루 세 가지 감사 일기</h3>
+<p class="text-gray-200 text-sm">긍정적인 마음 갖기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 잠들기 전, 하루 동안 감사했던 세 가지 일을 기록하며 긍정적인 태도를 길러요.</p>
+<div class="mt-auto">
+<button class="w-full bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-accent/90 transition-colors shadow-sm">
+                        참여하기
+                      </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">예정된 도전 과제</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden opacity-60">
+<div class="relative w-full aspect-video">
+<img alt="재정 관리" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4JkF5fkValqfqhcM-F88zD2eNAcdJyGQ5kZefb03DyTgw_MFcb8qVcHvGn4lblAY_xMSYRfNgijAE3besqlhEFyDw8RXSB9vOxJtipEEtQ2zGASNsMuPEZp9CJ79MAm3SDDvoIE5pmYK7BGHg5el6VzDW16wJm4UDs7ir5lP_hXWBaT8ua6cbiX3o8XbmV5S1t8Fuz1ZgYrYF75gd-TeF6Y_Ktf0Zj8BiwT70fmpp8ElYf9YiXNxNhiMwZt0cy5CqFTAN5BE5TZw3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">재정적 자유 얻기</h3>
+<p class="text-gray-200 text-sm">현명한 저축과 투자</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 10분간의 명상 세션을 통해 마음의 평화를 찾고 집중력을 높이세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-gray-400 dark:bg-gray-600 text-gray-200 dark:text-gray-300 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                곧 시작
+              </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden opacity-60">
+<div class="relative w-full aspect-video">
+<img alt="건강한 식습관" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXFZpv-ts6Y1TchVbSg7FH5tY6A27aP12r5bY2f-riCjc6jAEvUHCnZNgIP8J99fmb0ap-NpFAU8J3a1uuYfEJeuVz4CE-zxaLQVFtr6q9sqZ8s_WHJcaKncYsdYMlCuMnDcUgJQLT2iIyiA1v3LnujOaDeOSm6KcMreiR9rSZePrOhLEUDMx53-MRrwLYnXRpqwlp0fBawemmCvzN8RaqCv7F8jKiuiBpNXcoGc6dHGCRg3TIE1IN89do4GrqpPhjlLNEvLHwE7DH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">건강한 식습관 형성</h3>
+<p class="text-gray-200 text-sm">균형 잡힌 식단과 계획</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 10분간의 명상 세션을 통해 마음의 평화를 찾고 집중력을 높이세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-gray-400 dark:bg-gray-600 text-gray-200 dark:text-gray-300 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                곧 시작
+              </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden opacity-60">
+<div class="relative w-full aspect-video">
+<img alt="언어 학습" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-EYDD_1Wt7JIgVJjh5r0Tf-mX725yMJplevfhkoU2txh5U-zNNKGoWuGoJzLDao3w-lxPBEhxaSAETutwDkr5tbR7tntUHXIuPU89-i9jdSKtjMwwFwstJOfH9gzPlDjR8-vJPSLho57EYBVnEQ49RXbzOANhCTcVJjzCJqn5hhzrdnvr0l2GtKmPzjKujwmmwvqQaVdPJow-tfsjaPg3MvUIfcUVdIClU8nZanFcJ3Fx-XyLnLMgDZZmr48wK5DJJYVXwzdh-1tM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">새로운 언어 배우기</h3>
+<p class="text-gray-200 text-sm">외국어 학습</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 10분간의 명상 세션을 통해 마음의 평화를 찾고 집중력을 높이세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-gray-400 dark:bg-gray-600 text-gray-200 dark:text-gray-300 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                곧 시작
+              </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-card-light/70 dark:bg-card-dark/70 rounded-xl shadow-wood hover:shadow-wood-lg transition-shadow duration-300 overflow-hidden opacity-60">
+<div class="relative w-full aspect-video">
+<img alt="독서" class="w-full h-full object-cover rounded-t-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wM2tMPD-XCYAwOfCi0wwU56Ov0VmVSYGQmI2HLrksqlscWZg9z6UEMDj4IxxxzInjmgrL9Dyi9DNLwVucviMqbsygkcx5nM3rIpI_7heUPg4HwsVPZiVCrJEr6EBr_MhYr0lLoARxOMyr6wgHaYhbZWBJUTkJRDeFZNX8t83y-irE7RZuwmc18eQ041B1waBxBBNpr2-VMzB6xOQ9w1c5t2bej4By_iVRZWELqZ-qCuZlFFGY1e3jNj6iZOoisUL97-Ra73R0m4v"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white text-lg font-bold">주 1권 독서 챌린지</h3>
+<p class="text-gray-200 text-sm">매주 책 한 권 읽기</p>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<p class="text-sm text-text-light/90 dark:text-text-dark/90 flex-grow mb-4">매일 10분간의 명상 세션을 통해 마음의 평화를 찾고 집중력을 높이세요.</p>
+<div class="mt-auto">
+<button class="w-full bg-gray-400 dark:bg-gray-600 text-gray-200 dark:text-gray-300 font-bold py-2 px-4 rounded-lg cursor-not-allowed" disabled="">
+                곧 시작
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
