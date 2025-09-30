@@ -4,7 +4,8 @@
 
 - **최종 목표**: 사용자가 생성한 `goalcracker` Next.js 프로젝트에 `source/goalcracker`의 UI/UX와 `my-project`의 핵심 로직을 완벽하게 이식한다.
 - **핵심 원칙: 픽셀 퍼펙트 복제 (Pixel-Perfect Replication)**: 개발의 모든 단계에서 가장 중요한 것은 최종 결과물이 원본 `source/goalcracker` 앱과 시각적으로 **완벽하게 동일해야 한다**는 점이다. UI/UX의 어떤 변경도 허용되지 않는다.
-- **기술 표준**: Tailwind CSS v4.1의 "CSS-first" 접근 방식을 철저히 준수한다.
+- **기술 표준**: Tailwind CSS v4.1의 "CSS-first" 접근 방식을 철저히 준수한다. 향후 App 디자인 개선을 위해 style-guide page 추출이 가능해야 한다. 
+- **제약 사항**: 우선 휘발성 in-memory database를 사용한다. 로그인 상태로 시작한다.
 
 ## 2. 개발 계획
 
@@ -26,8 +27,16 @@
     - `goalcracker/app/layout.tsx`가 이 `Header`를 사용하도록 수정합니다.
     - **검증**: 개발 서버에서 `Header`가 원본과 완벽히 동일하게 보이는지 확인합니다.
 
-3.  **페이지별 마이그레이션 및 검증 (진행 중)**:
-    - **HomePage (`/app/page.tsx`)**: 원본의 `HomePage` UI를 가져와 구현합니다. **즉시 원본과 시각적으로 비교 검증합니다.**
+3.  **페이지별 마이그레이션 및 검증 **:
+    - **HomePage (`/app/page.tsx`)**: 원본의 `HomePage` UI를 가져와 구현합니다.
+	  아래 section들을 구현합니다.
+	  - `Navbar`: 메인 네비게이션 (상단 메뉴바).
+	  - `HeroSection`: Hero section 및 CTA 버튼
+	  - `PopularChallenges`: 인기 공식 도전 목록 3개
+	  - (로그인 상태라면)`MyGoalsPreview`: 내 목표 목록 미리보기
+	  - (로그 아웃 상태라면): 로그인 및 회원가입 버튼 보이기
+	  - `LatestAIMessage`: 최신 AI 메시지 목록 5개 보이기	  
+	
     - **ChallengesPage (`/app/challenges/page.tsx`)**: 원본의 `ChallengesPage` 및 `ChallengeCard` UI를 가져와 구현하고, `store.ts`의 로직과 연결합니다. **즉시 원본과 시각적으로 비교 검증합니다.**
     - 이와 같은 방식으로 `MyGoalsPage`, `GoalTasksPage`, `WallPage`, `SettingsPage` 등 모든 페이지를 순서대로 마이그레이션하고 **각각 검증**합니다.
 

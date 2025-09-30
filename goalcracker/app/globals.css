@@ -1,13 +1,38 @@
 @import "tailwindcss";
 
+/* Essential CSS Variables for GoalCracker */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Wood-themed colors from source/stitch design */
+  --color-primary: #8B4513;
+  --color-accent: #D2691E;
+  --color-background-light: #F5DEB3;
+  --color-background-dark: #6B4226;
+  --color-text-light: #4A2C2A;
+  --color-text-dark: #F5F5DC;
+  --color-card-light: #DEB887;
+  --color-card-dark: #A0522D;
+  
+  /* Additional wood colors */
+  --color-wood-base: #8B5E3C;
+  --color-wood-light: #A97461;
+  --color-wood-dark: #5A3823;
+  --color-neutral-light: #BFA89B;
+  --color-neutral-background: #EDE3DA;
+  
+  /* Wood-themed shadows */
+  --shadow-wood: 0 4px 6px -1px rgba(74, 44, 42, 0.4), 0 2px 4px -2px rgba(74, 44, 42, 0.3);
+  --shadow-wood-lg: 0 10px 15px -3px rgba(74, 44, 42, 0.4), 0 4px 6px -4px rgba(74, 44, 42, 0.3);
+  --shadow-card: 0 3px 12px rgba(0,0,0,0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -19,8 +44,108 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--color-background-light);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-repeat: repeat;
+    color: var(--color-text-light);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: var(--color-background-dark);
+      color: var(--color-text-dark);
+    }
+  }
+}
+
+/* Custom utility classes for GoalCracker design */
+@layer utilities {
+  .shadow-wood {
+    box-shadow: var(--shadow-wood);
+  }
+  
+  .shadow-wood-lg {
+    box-shadow: var(--shadow-wood-lg);
+  }
+  
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  
+  .text-primary {
+    color: var(--color-primary);
+  }
+  
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  
+  .bg-card-light {
+    background-color: var(--color-card-light);
+  }
+  
+  .bg-card-dark {
+    background-color: var(--color-card-dark);
+  }
+  
+  .text-text-light {
+    color: var(--color-text-light);
+  }
+  
+  .text-text-dark {
+    color: var(--color-text-dark);
+  }
+  
+  .bg-background-light {
+    background-color: var(--color-background-light);
+  }
+  
+  .bg-background-dark {
+    background-color: var(--color-background-dark);
+  }
+  
+  .bg-neutral-background {
+    background-color: var(--color-neutral-background);
+  }
+  
+  .bg-background-light {
+    background-color: var(--color-background-light);
+  }
+  
+  .bg-background-dark {
+    background-color: var(--color-background-dark);
+  }
+  
+  .text-text-light {
+    color: var(--color-text-light);
+  }
+  
+  .text-text-dark {
+    color: var(--color-text-dark);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .font-handwriting {
+    font-family: 'Gowun Dodum', cursive;
+  }
+  
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
 }

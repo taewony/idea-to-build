@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Header() {
+const Header: React.FC = () => {
     const pathname = usePathname();
+    
     const getLinkClass = (path: string) => {
         const baseClass = "text-sm font-medium transition-colors";
         const activeClass = "text-primary font-semibold";
@@ -22,7 +23,9 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                     <Link href="/" className="flex items-center gap-4">
                         <div className="text-primary size-7">
-                           <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path></svg>
+                           <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                               <path clipRule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fillRule="evenodd"></path>
+                           </svg>
                         </div>
                         <h2 className="text-xl font-bold text-gray-900 dark:text-white">GoalCracker</h2>
                     </Link>
@@ -45,3 +48,5 @@ export default function Header() {
         </header>
     );
 };
+
+export default Header;

@@ -6,22 +6,27 @@
 **앱 개발과 디자인 시스템 개선이 동시에 이루어지는 framework 구조**를 최종적으로 개발하기 위해, 
 아래와 같은 **PDSA 루프**를 체계를 만들려고 합니다. 즉, 지속적인 개선이 가능한 web app 개발이 목표입니다.
 다만, 개발 방법이 AI tool 및 design spec 문서, 그리고 prompt를 이용하여 app을 개발하며, 직접적인 코딩은 최소화 합니다.
-  - **sample web page 로부터 tokens.json 추출**
-  - **Design Tokens → Style-Guide page 생성**
-  - **blueprint(핵심 공간/동작 설명) → Design Spec 생성**
-  - **Sample Page → App Prototype → 핵심 design token 및 App UI page/section/component 등 UI 용어집 생성**
-  - **App 실행 후 AI와 공통 UI 용어를 사용하여 반복적으로 개선 및 재검증**
+  - **sample web page 로부터 tokens.json 추출(extract)**
+  - **Design Tokens → Style-Guide page 생성(visualize)**
+  - **blueprint(핵심 공간/동작 설명) → Design Spec 생성(spec-design)**
+  - **Sample Page → App Prototype → 핵심 design token 및 App UI page/section/component 등 UI 용어집 생성 (app-build)**
+  - **App 실행 후 AI와 공통 UI 용어를 사용하여 반복적으로 개선 및 재검증 (ds:refine, app:refine)**
 
 
-### 1. 툴킷 개요
+### 1. 툴킷 개요 및 특징
 
 **idea-to-build**는 아이디어에서 시작해 Next.js 15+ App Router 및 Tailwind 4.x 기반의 UI/UX 애플리케이션을 **AI 에이전트 CLI**와 스크립트 중심 워크플로우를 통해 빠르게 설계·구현하는 툴킷입니다.
+- idea로부터 NextJS app으로 만들기 위해 다양한 문서화 작업을 하게 되며, 이들 문서가 context가 되어 이를 기준으로 AI와 대화 하며 작업한다.
+- 따라서 특정 AI  Agent tool에 종속되지 않으며, 유료 AI tool이 필요하지 않다. 단지, 꾸준히 작업하는 것이 필요하다.
+- 단순한 prompt로부터 전체 App이 만들어지는 big-bang approach 대신에, 내 의도를 담은 AGENT.md 로부터 시작하여 점차 만들고자 하는 App으로 항해 나간다.
+
 
 **목표:**
 
   * 개발자와 AI가 공통 용어와 컨텍스트를 사용
   * 설계 문서 → 코드 생성을 자동화
   * 스타일 가이드와 UI 요소를 일관성 있게 관리
+  * 디자인 `source`로부터 static page 디자인을 만들고, 이를 design-spec 문서에 따라 App으로 만든다.
   
 ---
 
@@ -34,7 +39,7 @@
 *   **`ds:extract`**: 사용자가 제공한 벤치마크 사이트 URL이나 스크린샷을 AI가 분석하여 프로젝트의 `style-guide.md`와 `tokens.json`을 자동으로 추출한다.
 *   **`ds:visualize`**: 생성된 프로토타입에 사용자가 디자인 및 기능에 대한 피드백을 직접 남길 수 있는 플로팅 버튼을 추가한다. 이 피드백은 다음 개선 사이클의 입력값으로 활용된다.
 *   **`ds:refine`**: 생성된 프로토타입에 사용자가 디자인 및 기능에 대한 피드백을 직접 남길 수 있는 플로팅 버튼을 추가한다. 이 피드백은 다음 개선 사이클의 입력값으로 활용된다.
-*   **`spec:space`**: 앱의 핵심 사용자 활동 공간(예: 담벼락, 할일 목록, 대시보드)을 AI와 함께 설계하고, 각 공간에 대한 각각의 single page react html을 작성한다.
+*   **`spec:space`**: 앱의 핵심 사용자 활동 공간(예: 담벼락, 할일 목록, 대시보드)을 AI와 함께 설계하고, 각 공간에 대한 각각의 single page react html을 작성한다. blueprint.md 작성.
 *   **`spec:design`**: 생성된 디자인 에셋과 공간 및 page 설계를 바탕으로 기술적인 `design-spec.md` 문서를 작성한다.
 *   **`app:buid`**: `design-spec.md`과 `tokens.json`을 기반으로 실제 동작하는 NextJS 및 tailwind 기반 App 코드를 생성한다.
 

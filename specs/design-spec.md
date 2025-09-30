@@ -77,10 +77,12 @@
 
 - **목적:** 사용자의 현재 상태, 인기 목표, 주요 메뉴를 한눈에 보여주는 진입점.
 - **컴포넌트:**
-  - `Navbar`: 메인 네비게이션 (구현됨).
-  - `HeroSection`: 환영 메시지 및 앱 소개 (구현 필요).
-  - `PopularChallenges`: 인기 챌린지 목록 (구현 필요).
-  - `MyGoalsPreview`: 내 목표 미리보기 (구현 필요).
+  - `Navbar`: 메인 네비게이션 (상단 메뉴바).
+  - `HeroSection`: Hero section 및 CTA 버튼
+  - `PopularChallenges`: 인기 공식 도전 목록 3개
+  - (로그인 상태라면)`MyGoalsPreview`: 내 목표 목록 미리보기
+  - (로그 아웃 상태라면): 로그인 및 회원가입 버튼 보이기
+  - `LatestAIMessage`: 최신 AI 메시지 목록 5개 보이기
 
 ### 5.2. AI 잔소리 담벼락 (`/wall/page.tsx`)
 

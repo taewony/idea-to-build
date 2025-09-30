@@ -1,128 +1,61 @@
-export interface Task {
-  id: number;
-  goalId: number;
-  content: string;
-  isCompleted: boolean;
-}
+import { UserGoal, Task, Challenge } from './types';
 
-export interface Goal {
-  id: number;
-  title: string;
-  type: 'short' | 'long';
-  is_achieved: boolean;
-  tasks: Task[];
-}
+const MY_GOALS: UserGoal[] = [
+  {
+    id: '1',
+    title: 'Next.js 앱 프로토타입 완성',
+    description: '기본 기능과 UI를 포함한 프로토타입을 개발합니다.',
+    isPersonal: false,
+    participantCount: 1,
+    interestCount: 1,
+    progress: 66,
+  },
+  {
+    id: '2',
+    title: 'Tailwind CSS 마스터하기',
+    description: '공식 문서와 실습을 통해 Tailwind CSS 사용법을 익힙니다.',
+    isPersonal: true,
+    participantCount: 1,
+    interestCount: 3,
+    progress: 10,
+  },
+  {
+    id: '3',
+    title: '운동 꾸준히 하기',
+    description: '주 3회 이상 꾸준히 유산소 및 근력 운동을 진행합니다.',
+    isPersonal: true,
+    participantCount: 1,
+    interestCount: 12,
+    progress: 90,
+  },
+    {
+    id: '4',
+    challengeId: '1',
+    title: '오픈소스 경진대회 참여',
+    description: '유명 오픈소스 프로젝트에 기여하고 실력을 증명하세요.',
+    isPersonal: false,
+    participantCount: 128,
+    interestCount: 256,
+    progress: 0,
+  },
+];
 
-export interface Challenge {
-  id: number;
-  title: string;
-  description: string;
-  deadline: number; // D-day
-  participant_count: number;
-}
-
-let goals: Goal[] = [
-  { id: 1, title: 'Next.js 앱 프로토타입 완성', type: 'long', is_achieved: false, tasks: [
-    { id: 1, goalId: 1, content: '기본 레이아웃 구현', isCompleted: true },
-    { id: 2, goalId: 1, content: '메인 대시보드 UI 구현', isCompleted: true },
-    { id: 3, goalId: 1, content: '목표 관리 페이지 구현', isCompleted: false },
-  ]},
-  { id: 2, title: 'Tailwind CSS 마스터하기', type: 'long', is_achieved: false, tasks: [] },
-  { id: 3, title: '운동 꾸준히 하기', type: 'short', is_achieved: true, tasks: [] },
+const TASKS: Task[] = [
+    { id: '1', goalId: '1', content: '기본 레이아웃 구현', isCompleted: true },
+    { id: '2', goalId: '1', content: '메인 대시보드 UI 구현', isCompleted: true },
+    { id: '3', goalId: '1', content: '목표 관리 페이지 구현', isCompleted: false },
 ];
 
 let challenges: Challenge[] = [
-    { id: 1, title: '오픈소스 경진대회 참여', description: '유명 오픈소스 프로젝트에 기여하고 실력을 증명하세요.', deadline: 10, participant_count: 128 },
-    { id: 2, title: 'AI 스타트업 해커톤', description: '혁신적인 AI 모델을 개발하고 투자의 기회를 잡으세요.', deadline: 25, participant_count: 76 },
-    { id: 3, title: 'UX/UI 디자인 공모전', description: '사용자 중심의 아름다운 디자인을 선보이세요.', deadline: 40, participant_count: 212 },
-    { id: 4, title: '알고리즘 30일 챌린지', description: '매일 한 문제씩 해결하며 코딩 테스트에 대비하세요.', deadline: 30, participant_count: 540 },
+    { id: '1', title: '오픈소스 경진대회 참여', subtitle: '오픈소스', description: '유명 오픈소스 프로젝트에 기여하고 실력을 증명하세요.', image: '/images/challenge1.jpg', category: '개발', isUpcoming: false, participantCount: 128, interestCount: 256 },
+    { id: '2', title: 'AI 스타트업 해커톤', subtitle: 'AI', description: '혁신적인 AI 모델을 개발하고 투자의 기회를 잡으세요.', image: '/images/challenge2.jpg', category: '개발', isUpcoming: false, participantCount: 76, interestCount: 180 },
+    { id: '3', title: 'UX/UI 디자인 공모전', subtitle: '디자인', description: '사용자 중심의 아름다운 디자인을 선보이세요.', image: '/images/challenge3.jpg', category: '디자인', isUpcoming: true, participantCount: 212, interestCount: 450 },
 ];
 
 
-let nextGoalId = 4;
-let nextTaskId = 4;
-
-// --- Goal Functions ---
-
-export const getGoals = () => goals;
-
-export const getGoal = (id: number) => goals.find(g => g.id === id);
-
-export const addGoal = (title: string, type: 'short' | 'long') => {
-  const newGoal: Goal = {
-    id: nextGoalId++,
-    title,
-    type,
-    is_achieved: false,
-    tasks: [],
-  };
-  goals.push(newGoal);
-  return newGoal;
-};
-
-export const toggleGoal = (id: number) => {
-  const goal = getGoal(id);
-  if (goal) {
-    goal.is_achieved = !goal.is_achieved;
-  }
-};
-
-export const deleteGoal = (id: number) => {
-  goals = goals.filter(g => g.id !== id);
-};
-
-// --- Task Functions ---
-
-export const addTask = (goalId: number, content: string) => {
-  const goal = getGoal(goalId);
-  if (goal) {
-    const newTask: Task = {
-      id: nextTaskId++,
-      goalId,
-      content,
-      isCompleted: false,
-    };
-    goal.tasks.push(newTask);
-    return newTask;
-  }
-};
-
-export const toggleTask = (goalId: number, taskId: number) => {
-  const goal = getGoal(goalId);
-  if (goal) {
-    const task = goal.tasks.find(t => t.id === taskId);
-    if (task) {
-      task.isCompleted = !task.isCompleted;
-    }
-  }
-};
-
-export const deleteTask = (goalId: number, taskId: number) => {
-  const goal = getGoal(goalId);
-  if (goal) {
-    goal.tasks = goal.tasks.filter(t => t.id !== taskId);
-  }
-}
-
-// --- Challenge Functions ---
-
+export const getGoals = () => MY_GOALS;
+export const getTasks = (goalId: string) => TASKS.filter(t => t.goalId === goalId);
 export const getChallenges = () => challenges;
-
-export const addChallengeToGoals = (challenge: Challenge) => {
-    const existingGoal = goals.find(g => g.title === challenge.title);
-    if (existingGoal) {
-        return null; // 이미 목표가 존재하면 추가하지 않음
-    }
-    const newGoal: Goal = {
-        id: nextGoalId++,
-        title: challenge.title,
-        type: 'long', // 챌린지는 장기 목표로 설정
-        is_achieved: false,
-        tasks: [],
-    };
-    goals.push(newGoal);
-    return newGoal;
-}
 
 // --- AI Settings ---
 
