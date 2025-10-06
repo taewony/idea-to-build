@@ -1,0 +1,5 @@
+{
+  "name": "GameFinder",
+  "description": "An AI-powered game recommendation engine that suggests games based on your preferences. Get detailed insights and personalized recommendations by logging in.",
+  "requestFramePermissions": []
+}

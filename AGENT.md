@@ -12,14 +12,19 @@
   - **Sample Page → App Prototype → 핵심 design token 및 App UI page/section/component 등 UI 용어집 생성 (app-build)**
   - **App 실행 후 AI와 공통 UI 용어를 사용하여 반복적으로 개선 및 재검증 (ds:refine, app:refine)**
 
+항상 다음 작업 과정을 시작하기 전에 root 밑에 work-history.md로 기록하고 다음              │
+│   단계별 작업을 진행한다.
 
 ### 1. 툴킷 개요 및 특징
 
-**idea-to-build**는 아이디어에서 시작해 Next.js 15+ App Router 및 Tailwind 4.x 기반의 UI/UX 애플리케이션을 **AI 에이전트 CLI**와 스크립트 중심 워크플로우를 통해 빠르게 설계·구현하는 툴킷입니다.
-- idea로부터 NextJS app으로 만들기 위해 다양한 문서화 작업을 하게 되며, 이들 문서가 context가 되어 이를 기준으로 AI와 대화 하며 작업한다.
-- 따라서 특정 AI  Agent tool에 종속되지 않으며, 유료 AI tool이 필요하지 않다. 단지, 꾸준히 작업하는 것이 필요하다.
+- **idea-to-build**는 아이디어에서 시작해 **AI 에이전트 CLI**와의 협업으로 Next.js 15+ App Router 및 Tailwind 4.x 기반의 UI/UX 애플리케이션을 만든다.
+- **idea-to-build**는 AI와의 효율적인 협업을 위해 공통의 용어집과 workflow를 구축한다.
 - 단순한 prompt로부터 전체 App이 만들어지는 big-bang approach 대신에, 내 의도를 담은 AGENT.md 로부터 시작하여 점차 만들고자 하는 App으로 항해 나간다.
+- idea로부터 NextJS app으로 만들기 위해 다양한 문서화 작업을 하게 되며, 이들 문서가 context가 되어 이를 기준으로 AI와 대화 하며 작업한다.
+- 용어집과 문서를 기반으로 작업이 진행되므로, 특정 AI  Agent tool에 종속되지 않으며, 토큰을 효율적으로 사용할 수 있도록 한다.
 
+- tailwind는 4.1 CSS first approach를 사용해야 한다.
+https://tailwindcss.com/blog/tailwindcss-v4#css-first-configuration
 
 **목표:**
 
@@ -33,6 +38,8 @@
 ### 2. AI CLI 명령 예시
 사용자가 터미널에서 AI와 대화하며 전체 개발 과정을 진행할 수 있는 명령어 인터페이스입니다.
 일종의 미리 저장된 prompt 혹은 workflow라고도 볼 수 있다.
+
+*   **`app:convert`**: convert 'aistudio' generated react app into NextJS app.
 
 *   **`plan:init`**: 사용자의 아이디어를 몇 가지 질문을 통해 구체화하고, `PRD.md`와 `AGENT.md` 초안을 자동 생성한다.
 *   **`plan:it`**: 특정 작업에 대한 상세 계획을 ./plan 폴더 안에 작성한다.
@@ -213,7 +220,10 @@ idea-to-build/
 * 다른 한쪽에서는 디자인 시스템이 지속적으로 개선되며,
 * 결과적으로 **Starter Template**가 진화해서 다른 프로젝트에서도 바로 재사용 가능합니다.
 
-### 부록: Install Tailwind CSS with Next.js
+### 부록1
+- devtool mcp server 활용
+
+### 부록2: Install Tailwind CSS with Next.js
 
 ```
 npx create-next-app@latest goalcracker --typescript --eslint --app

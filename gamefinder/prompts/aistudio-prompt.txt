@@ -1,0 +1,29 @@
+https://ai.studio/apps/drive/1QOjThwkebyM8INVAKhrnEVhTSCWC7R6G
+
+- 지능형 게임 큐레이션 플랫폼을 위한 landing page 만들어줘.
+
+- Header section은 절대로 바꾸지 마. 지금의 깔끔한 모습이 좋아.
+- 'Add to Wishlist' 버튼을 누를 때,LoginModal 을 띄워주고, 아무런 id , passwd 입력하면 wishlist에 추가 되었다는 표시의 버튼으로 바뀌게 해줘.
+
+Header section은 절대로 바꾸지 마. 지금의 깔끔한 모습이 좋아.
+Logout 상태에서
+'View Details' 버튼을 누를 때, LoginModal 을 띄워주고, 아무런 id , passwd 입력하면
+해당 게임의 detailed page를 보여주는 페이지로 넘어 가죠.
+첨부 코드는 참조만 하고, 당신이 현재 디자인 테마를 그대로 유지한 채 정보를 보여는 방식으로 만들어줘.
+detailed page는 로그인 상태이니까, 따로 로그인을 권유하는 우측 하단 표시 대신에, 게임 노하우를 얻고 싶다면 프리미엄 서비스를 가입하라는 CTA 버튼을 추가해줘. 기능은 넣지 말아줘.
+
+
+- 'back to search' 아이콘을 누르면 초기 home 화면으로 돌아오는데, 이때 이전의 검색 결과를 그대로 유지하고 있다가 즉시 다시 보여주도록 수정.
+
+- Header section은 절대로 바꾸지 마. 지금의 깔끔한 모습이 좋아.
+
+Logout 상태에서
+- 게임을 search 하기 전에, 'Sign in for More' 버튼을 누르면, 개인화 된 page를 보여 주도록 수정.
+- 첨부한 html은 참고만 해서 당신이 현재 디자인 테마를 그대로 유지한 채 개인화된 정보를 보여는 방식으로 만들어줘.
+- 개인화된 정보에는 이미 backend에서 만들어 놓은 추천 게임 3개를 보여주고,
+- 그 밑에는 요즘 가장 핫한 게임 3개 정보를 보여줘.
+- 이 detailed 화면 상단에도 'back to search' 아이콘을 넣어줘.
+
+- 'Sign in for More' 버튼을 누르면, login modal이 뜨게 해줘, 버튼도 'Logout' 버튼으로 바꾸고, 'PersonalizedPage'로 이동하게 해줘.
+
+- Tailwind v4.1 (CSS first) 를 적용해줘. tailwind.config.ts 파일의 설정 없이 지금 디자인 스타일을 유지해줘.

@@ -1,0 +1,11 @@
+{
+  "workingDirectory": "gamefinder/",
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest",
+        "--executable-path=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" 
+      ]
+    }
+  }
+}

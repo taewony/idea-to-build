@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1919e6",
+              "background-light": "#f6f6f8",
+              "background-dark": "#111121",
+            },
+            fontFamily: {
+              display: ["Space Grotesk"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">stadia_controller</span>
+                GameFinder
+              </a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Discover</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">My Games</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-48 lg:w-64 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Search for games..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+</button>
+<div class="size-9 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkSFwzoT4_KTokkPBRUs0R44Uao0845UzV4qPjzvjse5OPvtjFkBEah88CYm9-Qt4bboEWxAhesodYhpk32WkcYQ7t9WM12el51oPpf6am65zj3ZNlidu9pXXeFE4wZRkrPXSnHZqQffPMx2gnhooHLnp8WVI9AicTIJdwFuBDIPlEsidAqPr-c4lNFluinphN8RL3BVEXN2L5H9Hp4YcJi7bDpGJ8hOr97KTfdPEw0n3bPZ-f69W6MMfOrNhAvGNH9wsYcnX7Epo");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<div class="max-w-4xl mx-auto">
+<div>
+<div class="w-full aspect-video rounded-xl bg-cover bg-center mb-8" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCApoFe3aio9H1tMGEWGo3l7gG9VzlN2yKwly0-gdLoz7skRS7FiuYCLWH1eK_8rispnwrRzTntGw-n6M92cVD7TVfictJe-5sez_osnhSO-FJOY_-d5JJgegjc4CfGoW8-1HVfbPdLct09ADfrguE2vEQ1ipizbXGJgXF9WjCkziYPHkrLXFXyC9eOZNIsN18C_owcpONfiG4dMbkSfo8UfIUNEbYPProaZXBW68l1ENQIL775RbRWFEB2HpMEUOjz1XS5W2HS6cE");'></div>
+<div class="mb-8">
+<h1 class="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-2">Cosmic Odyssey</h1>
+<p class="text-slate-500 dark:text-slate-400">Embark on an epic space adventure in Cosmic Odyssey, a thrilling RPG where you explore galaxies, battle alien foes, and uncover ancient secrets.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Available on: PC, PS5, Xbox Series X/S</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<div class="space-y-8">
+<div>
+<h2 class="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-2 mb-4 text-slate-900 dark:text-white">About the Game</h2>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Cosmic Odyssey is a sprawling RPG set in a vast, procedurally generated universe. Players can customize their characters, build their own spaceships, and engage in real-time combat. The game features a rich storyline with multiple branching paths and a dynamic world that reacts to player choices.
+                  </p>
+</div>
+<div>
+<h2 class="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-2 mb-4 text-slate-900 dark:text-white">Reviews</h2>
+<div class="space-y-6">
+<div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBikmd1Sx9mBbio8WbHEeSKZnA9ih--QEKJDsH0kn_ipQERj2U936USYW2hir7ouym-8wocpeaaQkOrsOeSfN6RXYl05TP8FhA2kcPsLBMz4GIqQvpJmocXEV_wJitYnBps2ZFzMmKHTNMpP4n_C835UvZOLEbaFXgtRxakawLMrYYH-UULfEpbZHGK94tj_ZSJJkkWCTSu4n9xCVWU28X9NJ9q-rkUoB76VtjdnfghsFfTM6Nvl3GRHmuDi7X82PTxB3-SxLZnpnE");'></div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Alex Mercer</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">2023-08-15</p>
+</div>
+<div class="flex items-center gap-0.5 text-yellow-400">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+</div>
+<p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">
+                            Cosmic Odyssey is an absolute masterpiece! The graphics are stunning, the gameplay is engaging, and the story is captivating. I've spent countless hours exploring the universe and I'm still discovering new things. Highly recommended!
+                          </p>
+<div class="flex items-center gap-6 mt-3 text-slate-500 dark:text-slate-400">
+<button class="flex items-center gap-1.5 text-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+<span>150</span>
+</button>
+<button class="flex items-center gap-1.5 text-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-base">thumb_down</span>
+<span>10</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhhA0QLxs0uA-roGrU1UJMEkQVr2Aj9uK-G5IYugzIIIfym4e6YonyasgARtw4ytNGbVgAnZqO_lgJTDmwHFPh0zjIpdPXB_5ITSwRnvGz0GfaRMM95_MqJnKCi-B3Mm_5zZj891jhgB2titUiqgF1WedMABrESy2VoDpgNdN0PypRHWU4y4Qo2X9UqHKukjgXXk__3sei2mp6xQcktu_0y0KUNjv1ce-iTqwIXxfgRn7QkqrewHpldyJT4Y5AHJghYuKUzHnZj6o");'></div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold text-slate-900 dark:text-white">Sarah Connor</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">2023-09-02</p>
+</div>
+<div class="flex items-center gap-0.5 text-yellow-400">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base text-slate-300 dark:text-slate-600">star</span>
+</div>
+</div>
+<p class="mt-2 text-slate-600 dark:text-slate-300 text-sm">
+                            I enjoyed Cosmic Odyssey, but it has a few minor issues. The combat can be a bit repetitive at times, and the UI could be more intuitive. However, the overall experience is still very positive, and the game offers a lot of content for the price.
+                          </p>
+<div class="flex items-center gap-6 mt-3 text-slate-500 dark:text-slate-400">
+<button class="flex items-center gap-1.5 text-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+<span>80</span>
+</button>
+<button class="flex items-center gap-1.5 text-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-base">thumb_down</span>
+<span>20</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div>
+<h2 class="text-2xl font-bold border-b border-slate-200 dark:border-slate-800 pb-2 mb-4 text-slate-900 dark:text-white">User Ratings</h2>
+<div class="flex items-center gap-4 mb-4">
+<div class="text-4xl font-bold text-slate-900 dark:text-white">4.5</div>
+<div>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Based on 1,250 reviews</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-sm">
+<span class="text-slate-500 dark:text-slate-400 w-3">5</span>
+<div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+<span class="text-slate-500 dark:text-slate-400 w-8 text-right">40%</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="text-slate-500 dark:text-slate-400 w-3">4</span>
+<div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 30%"></div>
+</div>
+<span class="text-slate-500 dark:text-slate-400 w-8 text-right">30%</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="text-slate-500 dark:text-slate-400 w-3">3</span>
+<div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 15%"></div>
+</div>
+<span class="text-slate-500 dark:text-slate-400 w-8 text-right">15%</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="text-slate-500 dark:text-slate-400 w-3">2</span>
+<div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 10%"></div>
+</div>
+<span class="text-slate-500 dark:text-slate-400 w-8 text-right">10%</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="text-slate-500 dark:text-slate-400 w-3">1</span>
+<div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 5%"></div>
+</div>
+<span class="text-slate-500 dark:text-slate-400 w-8 text-right">5%</span>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-lg bg-primary/10 dark:bg-primary/20 text-center">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Login Required</h3>
+<p class="text-sm text-primary/80 dark:text-primary/70 mb-4">To access more features and personalized recommendations, please log in.</p>
+<button class="w-full bg-primary text-white font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Log In</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
