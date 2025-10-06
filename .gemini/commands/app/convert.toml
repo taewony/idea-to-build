@@ -2,8 +2,8 @@
 # Invoked via: /app:convert
 description = "convert 'aistudio' generated react app into NextJS app."
 prompt = """
-	- The newly created NextJS project is in {{args}}.
-    - Please convert into a NextJS app {{args}} with Tailwind v4.1 from  {{args}}/source/ react app at it is.
-	- plz do not update {{args}}/app/globals.css
+	- The newly created NextJS project is in {{args}} installed with Tailwind v4.x.
+    - Please convert {{args}}/source/ react app into NextJS app {{args}}
+	- you should use the existing {{args}}/app/globals.css and not try to create 'tailwind.config.ts' file.
 	- plz create a '{{args}}/specs/blueprint.md' about {{args}}: - pages - components - sections - CTA buttons, and other key DOM elements, which are being used.
 """

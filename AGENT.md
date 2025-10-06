@@ -220,36 +220,21 @@ idea-to-build/
 * 다른 한쪽에서는 디자인 시스템이 지속적으로 개선되며,
 * 결과적으로 **Starter Template**가 진화해서 다른 프로젝트에서도 바로 재사용 가능합니다.
 
-### 부록1
+### 부록1: Gemini CLI
 - devtool mcp server 활용
 
 ### 부록2: Install Tailwind CSS with Next.js
 
 ```
-npx create-next-app@latest goalcracker --typescript --eslint --app
-cd goalcracker
-
-npm install tailwindcss @tailwindcss/postcss postcss
+npx create-next-app@latest new-app --typescript --eslint --app
+cd new-app
 ```
 
-- globals.css
+- ./app/globals.css
 ```
 @import "tailwindcss";
 ```
 
-
-- page.tsx
-```
-export default function Home() {
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}
-```
-export default config;
-```
 
 ```
 npm run dev
