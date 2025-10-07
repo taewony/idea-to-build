@@ -1,7 +1,5 @@
-// components/ui/ProgramCard.tsx
 import React from 'react';
-import Image from 'next/image';
-import { Program } from '@/lib/types';
+import { Program } from '../types';
 
 interface ProgramCardProps {
   program: Program;
@@ -9,7 +7,7 @@ interface ProgramCardProps {
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   return (
-    <li className="bg-white rounded-3xl shadow-xl flex flex-col text-gray-800 h-full">
+    <li className="bg-white rounded-3xl shadow-xl flex flex-col">
       <div className="p-6 flex-grow flex flex-col">
         {/* Category Badge */}
         <div>
@@ -26,29 +24,24 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         
         {/* Content with Image and Details */}
         <div className="flex flex-col sm:flex-row gap-4 items-start mt-4">
-          <figure className="flex-shrink-0 w-full sm:w-36 h-28 rounded-lg overflow-hidden relative">
-            <Image src={program.imageUrl} alt={program.title} layout="fill" className="w-full h-full object-cover" />
+          <figure className="flex-shrink-0 w-full sm:w-36 h-28 rounded-lg overflow-hidden">
+            <img src={program.imageUrl} alt={program.title} className="w-full h-full object-cover" />
           </figure>
-          <div className="flex-grow space-y-1 text-xs text-gray-800">
-              <div className="flex">
-                <div className="font-semibold text-gray-500 w-12 flex-shrink-0">장소 :</div>
-                <div>{program.details.place}</div>
-              </div>
-              <div className="flex">
-                <div className="font-semibold text-gray-500 w-12 flex-shrink-0">시간 :</div>
-                <div>{program.details.time}</div>
-              </div>
-              <div className="flex">
-                <div className="font-semibold text-gray-500 w-12 flex-shrink-0">강사 :</div>
-                <div dangerouslySetInnerHTML={{ __html: program.details.instructor }}></div>
-              </div>
-              {program.details.capacity && (
-                <div className="flex">
-                  <div className="font-semibold text-gray-500 w-12 flex-shrink-0">인원 :</div>
-                  <div>{program.details.capacity}</div>
-                </div>
-              )}
-              
+          <div className="text-sm text-gray-800 space-y-2 flex-grow">
+              <dl className="grid grid-cols-[auto,1fr] gap-x-2 gap-y-1">
+                  <dt className="font-semibold text-gray-500">장소 :</dt>
+                  <dd>{program.details.place}</dd>
+                  <dt className="font-semibold text-gray-500">시간 :</dt>
+                  <dd>{program.details.time}</dd>
+                  <dt className="font-semibold text-gray-500">강사 :</dt>
+                  <dd dangerouslySetInnerHTML={{ __html: program.details.instructor }}></dd>
+                  {program.details.capacity && (
+                      <>
+                          <dt className="font-semibold text-gray-500">인원 :</dt>
+                          <dd>{program.details.capacity}</dd>
+                      </>
+                  )}
+              </dl>
               {typeof program.remainingSpots === 'number' && (
                   <div className="mt-3 p-2 rounded-lg bg-pink-50 flex justify-between items-center text-xs">
                       <span className="font-bold text-gray-600">현재 신청가능 인원 :</span>

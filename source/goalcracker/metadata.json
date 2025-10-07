@@ -1,5 +1,0 @@
-{
-  "name": "GoalCracker",
-  "description": "An application to track and join challenges, with an AI message wall for motivation and coaching. Users can browse official and upcoming challenges, join them, and view a feed of anonymous AI-generated encouragement and critiques related to various goals.",
-  "requestFramePermissions": []
-}

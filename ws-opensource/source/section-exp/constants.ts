@@ -1,11 +1,7 @@
-// components/sections/SessionDetailsSection.tsx
-'use client';
 
-import React, { useState } from 'react';
-import ProgramCard from '@/components/ui/ProgramCard';
-import { TabData } from '@/lib/types';
+import { TabData } from './types';
 
-const TABS_DATA: TabData[] = [
+export const TABS_DATA: TabData[] = [
   {
     id: 'exp-panel-0',
     name: '체험 프로그램',
@@ -15,7 +11,7 @@ const TABS_DATA: TabData[] = [
         category: '체험 프로그램',
         title: 'APPLE 비전프로로 만나는 미래생활체험교육',
         description: 'AR 기기의 혁신인 애플 비전프로, 어떻게 우리의 삶과 평생교육에 적용될 수 있을지 직접 경험해보세요!',
-        imageUrl: '/images/thumb-1794428362_goD9TRdG_78e004b1e8d89710fac15508c166c9c3c7af2bd9_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_goD9TRdG_78e004b1e8d89710fac15508c166c9c3c7af2bd9_215x156.jpg',
         details: {
           place: '지하[M층] M 스튜디오',
           time: '13:00 ~ 16:30',
@@ -31,7 +27,7 @@ const TABS_DATA: TabData[] = [
         category: '체험 프로그램',
         title: '플라워 바스켓 : 10년의 배움 꽃을 피우다',
         description: '축하의 자리에 빠질 수 없는 꽃! 서울 시민의 배움의 꽃처럼 활짝 핀 플라워 바스켓을 만들어보아요.',
-        imageUrl: '/images/thumb-1794428362_gjTSicpy_5ca51e194e5f7ae25f1c0ed6472e9873dfdaea87_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_gjTSicpy_5ca51e194e5f7ae25f1c0ed6472e9873dfdaea87_215x156.jpg',
         details: {
           place: '지하[M층] M 라운지',
           time: '13:00 ~ 14:30',
@@ -47,7 +43,7 @@ const TABS_DATA: TabData[] = [
         category: '체험 프로그램',
         title: '하얀 그릇 위에 그림 이야기 [포슬린아트]',
         description: '예쁜 접시에 예쁘게 담는 마음, 도자기 위의 그림으로 나만의 명품접시를 만들어보세요',
-        imageUrl: '/images/thumb-1794428362_omDnsSZF_f5f8f68ff759c67b6553f189515c755b399fe34a_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_omDnsSZF_f5f8f68ff759c67b6553f189515c755b399fe34a_215x156.jpg',
         details: {
           place: '2층 세미나실',
           time: '15:00 ~ 16:30',
@@ -63,7 +59,7 @@ const TABS_DATA: TabData[] = [
         category: '체험 프로그램',
         title: '차와 함께하는 10주년, 축하의 Tea 타임',
         description: '10주년의 특별한 순간, 여러분을 향기로운 차의 세계로 초대합니다. 차와 함께하는 소중한 시간을 통해 일상 속의 힐링을 경험해보세요.',
-        imageUrl: '/images/thumb-1794428362_aLT1MO4A_955ca0690defb90d263e7fc8b6962d9f457cbf34_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_aLT1MO4A_955ca0690defb90d263e7fc8b6962d9f457cbf34_215x156.jpg',
         details: {
           place: '3층 308~309호',
           time: '13:00 ~ 14:30',
@@ -79,7 +75,7 @@ const TABS_DATA: TabData[] = [
         category: '체험 프로그램',
         title: '시들지 않는 꽃 디저트 : 화과자',
         description: '꽃을 피우는 계절, 자연과 계절의 아름다움을 표현하는 화과자를 만들어보아요.',
-        imageUrl: '/images/thumb-1794428362_Yjc9AdIn_931aa17c488555c18db161af420bbfa58352bbe9_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_Yjc9AdIn_931aa17c488555c18db161af420bbfa58352bbe9_215x156.jpg',
         details: {
           place: '3층 303~304호',
           time: '15:00 ~ 16:30',
@@ -101,7 +97,7 @@ const TABS_DATA: TabData[] = [
         category: '강의형 프로그램',
         title: '슬기로운 의약생활 : 일상 속 궁금했던 약 이야기',
         description: '사회적으로 큰 이슈가 되었던 시사적인 의약학 사건을 통해 알아보는 올바른 생활 속 의약 지식',
-        imageUrl: '/images/thumb-1794428362_vCDO9b8i_886cc3b1e060c3703aeda5f8c7ac44fd5ac865e3_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_vCDO9b8i_886cc3b1e060c3703aeda5f8c7ac44fd5ac865e3_215x156.jpg',
         details: {
           place: '1층 강의실 1',
           time: '13:00 ~ 14:30',
@@ -117,7 +113,7 @@ const TABS_DATA: TabData[] = [
         category: '강의형 프로그램',
         title: '케이팝 데몬 헌터스의 심미적 DNA : 서울의 미학',
         description: '전 세계 팬덤을 사로잡은 한국의 전통 문양, 세계가 열광하는 그 심미적 DNA를 해부하고,그 핵심을 담은 키링으로 재탄생시킵니다.',
-        imageUrl: '/images/thumb-1794428362_SmeAq7Et_a7c032a61712a3aeab7f6f4bde02811750676e3a_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_SmeAq7Et_a7c032a61712a3aeab7f6f4bde02811750676e3a_215x156.jpg',
         details: {
           place: '1층 강의실 1',
           time: '15:00 ~ 16:30',
@@ -133,7 +129,7 @@ const TABS_DATA: TabData[] = [
         category: '강의형 프로그램',
         title: '생성형 AI 시대의 자산관리 : 챗 GPT 사용법',
         description: '생성형 AI 챗봇의 특성을 이해하고 챗 GPT와 직접 대화하며, 나의 지출 현황을 파악하고 자산관리 목표를 설정해봅니다.',
-        imageUrl: '/images/thumb-1794428362_Z4Q285qx_de1a5612ddecf38966fd19f0bcf3f7fbbae5e924_215x156.png',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_Z4Q285qx_de1a5612ddecf38966fd19f0bcf3f7fbbae5e924_215x156.png',
         details: {
           place: '3층 301~302호',
           time: '13:00 ~ 14:30',
@@ -155,7 +151,7 @@ const TABS_DATA: TabData[] = [
         category: '명사특강 프로그램',
         title: '처음 만나는 아트 컬렉팅 : 내 삶에 예술을 들이는 법',
         description: '작은 작품 하나가 일상에 새로운 감각과 이야기를 불어넣는 경험을 함께 살펴보며, 좋은 예술작품의 기준과 좋은 예술작품을 찾는 안목에 대해 소통하는 시간',
-        imageUrl: '/images/thumb-1794428362_HJPZGF72_ef9b8fe0433d6eb2a012b9043381629af022e58b_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_HJPZGF72_ef9b8fe0433d6eb2a012b9043381629af022e58b_215x156.jpg',
         details: {
           place: '1층 소강당',
           time: '13:00 ~ 14:30',
@@ -171,7 +167,7 @@ const TABS_DATA: TabData[] = [
         category: '명사특강 프로그램',
         title: '알기 쉬운 생활 속 법률 이야기',
         description: '이거 진짜에요?소리가 절로 나오는 생활 속 법률 이야기! 궁금한 것 무엇이든 물어보세요!',
-        imageUrl: '/images/thumb-1794428362_gAFEjbMv_0b8873aea32478a5b53e0716718c73460108d90f_215x156.jpg',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_gAFEjbMv_0b8873aea32478a5b53e0716718c73460108d90f_215x156.jpg',
         details: {
           place: '1층 소강당',
           time: '15:00 ~ 16:30',
@@ -193,7 +189,7 @@ const TABS_DATA: TabData[] = [
         category: '홍보부스',
         title: '평생교육이용권 홍보부스',
         description: '평생교육이용권 상담 부스 운영',
-        imageUrl: '/images/thumb-1794428362_l2WMdABS_8b6809dc47817cbab52800d3a063eecd03eadc79_215x156.png',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_l2WMdABS_8b6809dc47817cbab52800d3a063eecd03eadc79_215x156.png',
         details: {
           place: '지하[M층] 입구 옆 1',
           time: '13:00 ~ 16:30',
@@ -207,7 +203,7 @@ const TABS_DATA: TabData[] = [
         category: '홍보부스',
         title: '리테크 사업 홍보 및 원포인트 재무상담',
         description: '공인재무상담사와 함께하는 1:1 맞춤 재무상담! 재무진단 받고 기초 컨설팅까지 받아보세요!',
-        imageUrl: '/images/thumb-1794428362_JHR9pnA0_66ed1a2e7aed9d713d3d24d68072023fceb8fd72_215x156.png',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_JHR9pnA0_66ed1a2e7aed9d713d3d24d68072023fceb8fd72_215x156.png',
         details: {
           place: '지하[M층] 입구 옆 2',
           time: '13:00 ~ 16:30',
@@ -221,7 +217,7 @@ const TABS_DATA: TabData[] = [
         category: '홍보부스',
         title: '한글햇살버스 : 서울의 디지털문해교육 총집합',
         description: '해치가 AI 스피커로 변했다?! 각종 신기술과 함께하는 서울의 디지털 문해교육 현장을 체험하세요!',
-        imageUrl: '/images/thumb-1794428362_TSXewsEC_3f5984246307539088757d9d9b4e59b897e9584b_215x156.png',
+        imageUrl: 'https://slei10th.com/data/file/program/thumb-1794428362_TSXewsEC_3f5984246307539088757d9d9b4e59b897e9584b_215x156.png',
         details: {
           place: '야외',
           time: '13:00 ~ 16:30',
@@ -233,56 +229,3 @@ const TABS_DATA: TabData[] = [
     ],
   },
 ];
-
-const SessionDetailsSection = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const activeCategory = TABS_DATA[activeTab];
-
-  return (
-    <section id="session" className="py-16 sm:py-24 bg-[#211d21] text-white">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-          <aside className="lg:col-span-3">
-            <div className="lg:sticky lg:top-16">
-              <div className="text-center lg:text-left mb-12">
-                <h2 id="exp-tit" className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-                  시민참여 세션
-                </h2>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2 lg:flex-col lg:justify-start" role="tablist">
-                {TABS_DATA.map((category, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveTab(index)}
-                    className={`px-4 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-[#FF0A73] lg:w-full lg:text-left lg:py-3 ${
-                      activeTab === index
-                        ? 'bg-[#FF0A73] text-white shadow-md'
-                        : 'text-gray-300 hover:bg-slate-700'
-                    }`}
-                    role="tab"
-                    aria-selected={activeTab === index}
-                  >
-                    {category.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </aside>
-          
-          <div className="lg:col-span-9 mt-12 lg:mt-0">
-            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-12">
-              {activeCategory.programs.map((program) => (
-                <ProgramCard key={program.id} program={program} />
-              ))}
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default SessionDetailsSection;

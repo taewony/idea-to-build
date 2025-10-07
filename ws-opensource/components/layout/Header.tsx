@@ -32,7 +32,7 @@ const Header = () => {
         </div>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-6">
           {navLinks.map((link) => (
             <Link key={link.label} href={link.href} className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]">
               {link.label}
@@ -41,7 +41,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open Menu">
             {isMenuOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -54,7 +54,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="lg:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link 

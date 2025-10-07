@@ -1,0 +1,557 @@
+<section id="exp" class="exp main-content__panel" aria-labelledby="exp-tit">
+  <div class="inner">
+    <div class="exp-cont">
+      <div class="exp-info">
+        <h2 id="exp-tit" class="main-tit main-tit--white">시민참여 세션</h2>
+        <div class="exp-tabs" role="tablist">
+                    <button type="button" id="exp-tab-0" class="exp-tabs__btn" role="tab" aria-controls="exp-panel-0" aria-selected="false">체험 프로그램</button>
+                    <button type="button" id="exp-tab-1" class="exp-tabs__btn" role="tab" aria-controls="exp-panel-1" aria-selected="false">강의형 프로그램</button>
+                    <button type="button" id="exp-tab-2" class="exp-tabs__btn" role="tab" aria-controls="exp-panel-2" aria-selected="false">명사특강 프로그램</button>
+                    <button type="button" id="exp-tab-3" class="exp-tabs__btn" role="tab" aria-controls="exp-panel-3" aria-selected="true">홍보부스</button>
+                  </div>
+      </div>
+      <div class="exp-panels">
+                <ul id="exp-panel-0" class="exp-panels__list exp-panels__list--exp" role="tabpanel" aria-labelledby="exp-tab-0" aria-hidden="true">
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">체험 프로그램</h3>
+                <h4 class="exp-panels__st">APPLE 비전프로로 만나는 미래생활체험교육</h4>
+                                <p class="exp-panels__desc">AR 기기의 혁신인 애플 비전프로, 어떻게 우리의 삶과 평생교육에 <br>적용될 수 있을지 직접 경험해보세요! </p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_goD9TRdG_78e004b1e8d89710fac15508c166c9c3c7af2bd9_215x156.jpg" alt="APPLE 비전프로로 만나는 미래생활체험교육">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd"> 지하[M층] M 스튜디오</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">지식나무 유성민</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>19명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="3" data-src2="APPLE 비전프로로 만나는 미래생활체험교육">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">체험 프로그램</h3>
+                <h4 class="exp-panels__st">플라워 바스켓 : 10년의 배움 꽃을 피우다</h4>
+                                <p class="exp-panels__desc">축하의 자리에 빠질 수 없는 꽃!서울 시민의 배움의 꽃처럼 활짝 핀 플라워 바스켓을 만들어보아요.</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_gjTSicpy_5ca51e194e5f7ae25f1c0ed6472e9873dfdaea87_215x156.jpg" alt="플라워 바스켓 : 10년의 배움 꽃을 피우다">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd"> 지하[M층] M 라운지</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 14:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">제이블라썸 양정현</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="4" data-src2="플라워 바스켓 : 10년의 배움 꽃을 피우다">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">체험 프로그램</h3>
+                <h4 class="exp-panels__st">하얀 그릇 위에 그림 이야기 [포슬린아트]</h4>
+                                <p class="exp-panels__desc">예쁜 접시에 예쁘게 담는 마음, 도자기 위의 그림으로 나만의 명품접시를 만들어보세요</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_omDnsSZF_f5f8f68ff759c67b6553f189515c755b399fe34a_215x156.jpg" alt="하얀 그릇 위에 그림 이야기 [포슬린아트]">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">2층 세미나실</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">15:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">셀린의 아뜰리에 대표 황명길</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="9" data-src2="하얀 그릇 위에 그림 이야기 [포슬린아트]">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">체험 프로그램</h3>
+                <h4 class="exp-panels__st">차와 함께하는 10주년, 축하의 Tea 타임</h4>
+                                <p class="exp-panels__desc">10주년의 특별한 순간, 여러분을 향기로운 차의 세계로 초대합니다.<br>차와 함께하는 소중한 시간을 통해 일상 속의 힐링을 경험해보세요.</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_aLT1MO4A_955ca0690defb90d263e7fc8b6962d9f457cbf34_215x156.jpg" alt="차와 함께하는 10주년, 축하의 Tea 타임">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">3층 308~309호</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 14:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">레드팟티 최성영</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="12" data-src2="차와 함께하는 10주년, 축하의 Tea 타임">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">체험 프로그램</h3>
+                <h4 class="exp-panels__st">시들지 않는 꽃 디저트 : 화과자</h4>
+                                <p class="exp-panels__desc">꽃을 피우는 계절, 자연과 계절의 아름다움을 표현하는 화과자를 만들어보아요.</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_Yjc9AdIn_931aa17c488555c18db161af420bbfa58352bbe9_215x156.jpg" alt="시들지 않는 꽃 디저트 : 화과자">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">3층 303~304호</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">15:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">샤뷔에 케이크 고선영</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="11" data-src2="시들지 않는 꽃 디저트 : 화과자">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                  </ul>
+                <ul id="exp-panel-1" class="exp-panels__list exp-panels__list--education" role="tabpanel" aria-labelledby="exp-tab-1" aria-hidden="true">
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">강의형 프로그램</h3>
+                <h4 class="exp-panels__st">슬기로운 의약생활 : 일상 속 궁금했던 약 이야기</h4>
+                                <p class="exp-panels__desc">사회적으로 큰 이슈가 되었던 시사적인 의약학 사건을 통해 알아보는 올바른 생활 속 의약 지식</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_vCDO9b8i_886cc3b1e060c3703aeda5f8c7ac44fd5ac865e3_215x156.jpg" alt="슬기로운 의약생활 : 일상 속 궁금했던 약 이야기">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">1층 강의실 1</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 14:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">중앙대학교 약학대학 겸임교수 정병욱</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="5" data-src2="슬기로운 의약생활 : 일상 속 궁금했던 약 이야기">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">강의형 프로그램</h3>
+                <h4 class="exp-panels__st">케이팝 데몬 헌터스의 심미적 DNA : 서울의 미학</h4>
+                                <p class="exp-panels__desc">전 세계 팬덤을  사로잡은 한국의 전통 문양, 세계가 열광하는 그 심미적  DNA를 해부하고,그 핵심을 담은 키링으로 재탄생시킵니다.</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_SmeAq7Et_a7c032a61712a3aeab7f6f4bde02811750676e3a_215x156.jpg" alt="케이팝 데몬 헌터스의 심미적 DNA : 서울의 미학">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">1층 강의실 1</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">15:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">궁궐문화원 수석연구원 이한들</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 20명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>20명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="6" data-src2="케이팝 데몬 헌터스의 심미적 DNA : 서울의 미학">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">강의형 프로그램</h3>
+                <h4 class="exp-panels__st">생성형 AI 시대의 자산관리 : 챗 GPT 사용법</h4>
+                                <p class="exp-panels__desc">생성형 AI 챗봇의 특성을 이해하고 챗 GPT와 직접 대화하며, 나의 지출 현황을 파악하고 자산관리 목표를 설정해봅니다.</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_Z4Q285qx_de1a5612ddecf38966fd19f0bcf3f7fbbae5e924_215x156.png" alt="생성형 AI 시대의 자산관리 : 챗 GPT 사용법">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">3층 301~302호</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 14:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">에이로움 교육연구소, 재무설계사 최아영</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 30명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>30명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="10" data-src2="생성형 AI 시대의 자산관리 : 챗 GPT 사용법">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                  </ul>
+                <ul id="exp-panel-2" class="exp-panels__list exp-panels__list--special" role="tabpanel" aria-labelledby="exp-tab-2" aria-hidden="true">
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">명사특강 프로그램</h3>
+                <h4 class="exp-panels__st">처음 만나는 아트 컬렉팅 : 내 삶에 예술을 들이는 법</h4>
+                                <p class="exp-panels__desc">작은 작품 하나가 일상에 새로운 감각과 이야기를 불어넣는  경험을 함께 살펴보며, 좋은 예술작품의 기준과 좋은 예술작품을 찾는 안목에 대해 소통하는 시간</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_HJPZGF72_ef9b8fe0433d6eb2a012b9043381629af022e58b_215x156.jpg" alt="처음 만나는 아트 컬렉팅 : 내 삶에 예술을 들이는 법">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">1층 소강당</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 14:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">미술에세이스트&amp;아트컬렉터 이소영</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 50명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>50명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="7" data-src2="처음 만나는 아트 컬렉팅 : 내 삶에 예술을 들이는 법">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">명사특강 프로그램</h3>
+                <h4 class="exp-panels__st">알기 쉬운 생활 속 법률 이야기</h4>
+                                <p class="exp-panels__desc">이거 진짜에요?소리가 절로 나오는 생활 속 법률 이야기! 궁금한 것 무엇이든 물어보세요!</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_gAFEjbMv_0b8873aea32478a5b53e0716718c73460108d90f_215x156.jpg" alt="알기 쉬운 생활 속 법률 이야기">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">1층 소강당</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">15:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">변호사 박지훈</dd>
+                                                            <dt class="exp-panels__dt">인원 :</dt>
+                    <dd class="exp-panels__dd">선착순 50명</dd>
+                                      </dl>
+                                    <strong class="exp-panels__dl exp-panels__dl--total">
+                    <dt class="exp-panels__dt">현재 신청가능 인원 : </dt>
+                    <dd class="exp-panels__dd"><strong>50명</strong></dd>
+                  </strong>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" data-src="8" data-src2="알기 쉬운 생활 속 법률 이야기">신청하기</button>
+                              </div>
+            </div>
+          </li>
+                  </ul>
+                <ul id="exp-panel-3" class="exp-panels__list exp-panels__list--participate" role="tabpanel" aria-labelledby="exp-tab-3" aria-hidden="false">
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">홍보부스</h3>
+                <h4 class="exp-panels__st">평생교육이용권 홍보부스</h4>
+                                <p class="exp-panels__desc">평생교육이용권 상담 부스 운영</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_l2WMdABS_8b6809dc47817cbab52800d3a063eecd03eadc79_215x156.png" alt="평생교육이용권 홍보부스">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">지하[M층] 입구 옆 1</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">서울특별시평생교육진흥원 <br>운영진</dd>
+                                                          </dl>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" disabled="">
+                현장접수  
+                </button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">홍보부스</h3>
+                <h4 class="exp-panels__st">리테크 사업 홍보 및 원포인트 재무상담</h4>
+                                <p class="exp-panels__desc">공인재무상담사와 함께하는 1:1 맞춤 재무상담! 재무진단 받고 기초 컨설팅까지 받아보세요!</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_JHR9pnA0_66ed1a2e7aed9d713d3d24d68072023fceb8fd72_215x156.png" alt="리테크 사업 홍보 및 원포인트 재무상담">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">지하[M층] 입구 옆 2</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">리테크 재무설계사</dd>
+                                                          </dl>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" disabled="">
+                현장접수  
+                </button>
+                              </div>
+            </div>
+          </li>
+                    <li class="exp-panels__item">
+            <div class="exp-panels__wrap">
+              <div class="exp-panels__greet">
+                <h3 class="exp-panels__tit">홍보부스</h3>
+                <h4 class="exp-panels__st">한글햇살버스 : 서울의 디지털문해교육 총집합</h4>
+                                <p class="exp-panels__desc">해치가 AI 스피커로 변했다?! 각종 신기술과 함께하는 서울의 디지털 문해교육 현장을 체험하세요!</p>
+                              </div>
+              <div class="exp-panels__cont">
+                <figure class="exp-panels__frame">
+                  <img src="https://slei10th.com/data/file/program/thumb-1794428362_TSXewsEC_3f5984246307539088757d9d9b4e59b897e9584b_215x156.png" alt="한글햇살버스 : 서울의 디지털문해교육 총집합">
+                </figure>
+                <div class="exp-panels__meta">
+                  <dl class="exp-panels__dl">
+                                        <dt class="exp-panels__dt">장소 :</dt>
+                    <dd class="exp-panels__dd">야외</dd>
+                                                            <dt class="exp-panels__dt">시간 :</dt>
+                    <dd class="exp-panels__dd">13:00 ~ 16:30</dd>
+                                                            <dt class="exp-panels__dt">강사 :</dt>
+                    <dd class="exp-panels__dd">한글햇살버스</dd>
+                                                          </dl>
+                                  </div>
+              </div>
+            </div>
+            <div class="exp-panels__ctrl">
+              <div class="exp-panels__radius">
+                                <button type="button" class="exp-panels__btn" disabled="">
+                현장접수  
+                </button>
+                              </div>
+            </div>
+          </li>
+                  </ul>
+              </div>
+    </div>
+  </div>
+</section>
+
+element.style {
+}
+body {
+    font-size: 0.14rem;
+    color: var(--main-black);
+    font-weight: 400;
+    font-family: 'Pretendard', '맑은고딕', sans-serif;
+    word-break: keep-all;
+    -webkit-text-size-adjust: none;
+}
+html, body, div, span, object, iframe, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, ins, q, s, samp, small, strike, strong, sub, sup, figure, tt, var, b, u, i, h1, h2, h3, h4, h5, h6, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+@media (max-width: 1080px) {
+    html, body {
+        font-size: 9.259vw;
+    }
+}
+@media (max-width: 1280px) {
+    html, body {
+        font-size: 7.8125vw;
+    }
+}
+@media (max-width: 1660px) {
+    html, body {
+        font-size: 6.0241vw;
+    }
+}
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+html, body {
+    font-size: 625%;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    outline: none;
+    border: 0;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+style attribute {
+    --vh: 9.82px;
+}
+@media (max-width: 1080px) {
+    :root {
+        --fz: 0.15rem;
+    }
+}
+:root {
+    --fz: 0.16rem;
+    --inner: 1620px;
+    --main-black: #000;
+    --scd-black: #222;
+    --thr-black: #444;
+    --four-black: #666;
+    --main-gray: #888;
+    --main-color: #9E1648;
+    --scd-color: #9B3F92;
+    --thr-color: #68169E;
+    --four-color: #36142B;
+    --fifth-color: #FF0A73;
+    --line: #d9d9d9;
+    --shadow-1: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
