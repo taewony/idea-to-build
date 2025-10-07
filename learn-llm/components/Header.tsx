@@ -20,8 +20,8 @@ export default function Header() {
       <nav className="hidden md:flex items-center gap-6 text-sm">
         <Link href="/" className={pathname === '/' ? `${linkClass} ${activeLinkClass}` : linkClass}>Home</Link>
         <Link href="/community" className={pathname === '/community' ? `${linkClass} ${activeLinkClass}` : linkClass}>Community</Link>
-        <a href="/#labs" className={linkClass}>Labs</a>
-        <Link href="/learn/build-llm-from-scratch" className={pathname === '/learn/build-llm-from-scratch' ? `${linkClass} ${activeLinkClass}` : linkClass}>Local LM</Link>
+        <Link href="/learn/local-llm" className={pathname.startsWith('/learn/local-llm') ? `${linkClass} ${activeLinkClass}` : linkClass}>Local LLM</Link>
+        <Link href="/learn/build-llm-from-scratch" className={pathname === '/learn/build-llm-from-scratch' ? `${linkClass} ${activeLinkClass}` : linkClass}>LLM from Scratch</Link>
       </nav>
       <div>
          <a href="#pricing" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:pointer-events-none disabled:opacity-50 bg-slate-50 text-slate-900 hover:bg-slate-50/90 h-10 px-4 py-2">Get Started</a>

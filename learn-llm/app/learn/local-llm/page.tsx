@@ -10,17 +10,10 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: '0. Introduction: LLM을 처음부터 만들어보는 여정',
-    path: '/learning-materials/build-llm-from-scratch/0-introduction.md',
+    title: '0. Introduction: Running Your Own Small Language Model',
+    path: '/learning-materials/local-llm/0-introduction.md',
   },
-  {
-    title: '1. Development Environment Setup',
-    path: '/learning-materials/build-llm-from-scratch/1-dev-environment.md',
-  },
-  {
-    title: '2. Building a Tokenizer',
-    path: '/learning-materials/build-llm-from-scratch/2-tokenizer.md',
-  },
+  // Add more articles here as they are created
 ];
 
 const ArticleRenderer: React.FC<{ article: Article }> = ({ article }) => {
@@ -58,18 +51,10 @@ const ArticleRenderer: React.FC<{ article: Article }> = ({ article }) => {
                      prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg
                      prose-p:leading-relaxed
                      prose-a:text-sky-400 hover:prose-a:text-sky-300
-
-                     /* ✅ Inline code */
                      prose-code:bg-slate-800 prose-code:text-amber-400 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm
-
-                     /* ✅ Code blocks */
                      prose-pre:bg-gradient-to-br prose-pre:from-slate-800 prose-pre:to-slate-900 prose-pre:border prose-pre:border-slate-700
                      prose-pre:rounded-xl prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:font-mono prose-pre:text-sm
-
-                     /* ✅ Blockquotes */
                      prose-blockquote:border-l-4 prose-blockquote:border-sky-500 prose-blockquote:bg-slate-800/50 prose-blockquote:pl-5 prose-blockquote:italic prose-blockquote:text-sky-200 prose-blockquote:rounded-r-lg
-
-                     /* ✅ Lists and indentation */
                      prose-ul:list-disc prose-ul:pl-6 prose-li:marker:text-sky-400
                      prose-ol:list-decimal prose-ol:pl-6 prose-li:pl-1"
           dangerouslySetInnerHTML={{ __html: parsedContent }}
@@ -79,13 +64,13 @@ const ArticleRenderer: React.FC<{ article: Article }> = ({ article }) => {
   );
 };
 
-export default function LearningPage() {
+export default function LocalLlmPage() {
   return (
     <div className="py-12">
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-slate-50">Build an LLM from Scratch</h1>
+        <h1 className="text-4xl font-extrabold text-slate-50">Running a Local LLM</h1>
         <p className="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">
-          Follow these guides to build your own Large Language Model from the ground up.
+          Learn to install and run a small language model on your own machine.
         </p>
       </div>
 
