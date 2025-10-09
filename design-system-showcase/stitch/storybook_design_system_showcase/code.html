@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex min-h-screen">
+<aside class="w-72 border-r border-slate-200 dark:border-slate-800 p-6 flex-col justify-between hidden sm:flex">
+<div>
+<div class="mb-8">
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">Design Elements</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400">Showcase App</p>
+</div>
+<nav class="flex flex-col space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">toggle_on</span>
+                    Buttons
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">edit_square</span>
+                    Text Inputs
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">arrow_drop_down_circle</span>
+                    Dropdowns
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">picture_in_picture</span>
+                    Modals
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">badge</span>
+                    Cards
+                </a>
+</nav>
+</div>
+<div class="text-xs text-slate-400 dark:text-slate-500">
+<p>© 2024 Stitch Design</p>
+</div>
+</aside>
+<div class="flex-1 flex flex-col">
+<header class="h-16 flex items-center justify-between px-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<button class="sm:hidden p-2 -ml-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-sm font-medium text-slate-500 dark:text-slate-400">/ Buttons</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img alt="User avatar" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmaW92g1vrS0AVYlHzx9VsLRHMA91J5Ag2Ybyz5WO0jiHbbA8jTRZsSpvUAiJjXz4h-XxrGkoot-uwWfWDKQXlb7bul0WgIhA7W09ciI0fW6G_0Vh_u31aaRRF-CFMrUp6QYTLFn_44gdTXr3xZWPCeSFemvJsLqI6wHzncUhlmMzobgZI7qKfrO1SzZnFptN2iakfyAeQmlsFgvlFcGJzUOgxSSF8OU3tCngTYFaj9uBQCbOgObEOfmRZXTypqhjuNxHmsnZW9R0"/>
+</div>
+</header>
+<main class="flex-1 p-6 md:p-10">
+<header class="mb-10">
+<h2 class="text-4xl font-bold text-slate-900 dark:text-white">Buttons</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">A showcase of various button styles and states.</p>
+</header>
+<div class="space-y-12">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-slate-900 dark:text-white">Primary Buttons</h3>
+<div class="p-6 bg-white dark:bg-slate-900/40 rounded-lg flex flex-wrap items-center gap-4">
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white font-semibold text-sm shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+                            Click Me
+                        </button>
+<button class="px-5 py-2.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-300 dark:hover:bg-slate-600">
+                            Cancel
+                        </button>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-slate-900 dark:text-white">Secondary Buttons</h3>
+<div class="p-6 bg-white dark:bg-slate-900/40 rounded-lg flex flex-wrap items-center gap-4">
+<button class="px-5 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary font-semibold text-sm hover:bg-primary/20 dark:hover:bg-primary/30">
+                            Submit
+                        </button>
+<button class="px-5 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+                            Learn More
+                        </button>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-slate-900 dark:text-white">Tertiary Buttons</h3>
+<div class="p-6 bg-white dark:bg-slate-900/40 rounded-lg flex flex-wrap items-center gap-4">
+<button class="px-5 py-2.5 rounded-lg text-primary font-semibold text-sm hover:underline">
+                            View Details
+                        </button>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-slate-900 dark:text-white">Disabled Buttons</h3>
+<div class="p-6 bg-white dark:bg-slate-900/40 rounded-lg flex flex-wrap items-center gap-4">
+<button class="px-5 py-2.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 font-semibold text-sm cursor-not-allowed">
+                            Disabled Button
+                        </button>
+<button class="px-5 py-2.5 rounded-lg text-slate-400 dark:text-slate-600 font-semibold text-sm cursor-not-allowed">
+                            Inactive Button
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -3,8 +3,9 @@
 당신은 UX/UI 및 NextJS 앱 개발 전문가입니다.
 
 이제 당신과 나는 
-**앱 개발과 디자인 시스템 개선이 동시에 이루어지는 framework 구조**를 최종적으로 개발하기 위해, 
-아래와 같은 **PDSA 루프**를 체계를 만들려고 합니다. 즉, 지속적인 개선이 가능한 web app 개발이 목표입니다.
+**앱 개발과 디자인 시스템 개선이 동시에 이루어지는 framework 구조**를 최종적으로 개발하기 위해, 아래와 같은 **PDSA 루프**를 체계를 만들려고 합니다. 
+즉, 지속적인 학습과 개선이 가능한 web app 개발이 목표입니다.
+
 다만, 개발 방법이 AI tool 및 design spec 문서, 그리고 prompt를 이용하여 app을 개발하며, 직접적인 코딩은 최소화 합니다.
   - **sample web page 로부터 tokens.json 추출(extract)**
   - **Design Tokens → Style-Guide page 생성(visualize)**
@@ -12,14 +13,22 @@
   - **Sample Page → App Prototype → 핵심 design token 및 App UI page/section/component 등 UI 용어집 생성 (app-build)**
   - **App 실행 후 AI와 공통 UI 용어를 사용하여 반복적으로 개선 및 재검증 (ds:refine, app:refine)**
 
-항상 다음 작업 과정을 시작하기 전에 root 밑에 work-history.md로 기록하고 다음              │
-│   단계별 작업을 진행한다.
+### 0. 현재까지의 시도에서 드러난 한계점들
 
+- 현재 현실적으로 파악한 내용은 AI tool들이 생성하는 react app이 tailwind의 utility class를 HTML 요소에 적용하는 inline css 방식이라,
+체계적인 디자인 시스템을 구축해 나가는데, 방해가 된다는 점이다.
+- AI Studio tool이 생성한 multi-page react app을 NextJS로 변환하는 방식이 주된 workflow로 안착했다. 즉, 디자인을 고려한 app 개발은 단순히 AI tool에 의존하는 꼴이 되었다.
+- 이 workflow로는 globals.css 안에는 @import "tailwindcss"; 한줄 넣고 동작시키는데, 이러한 상황에서 나만의 디자인 시스템을 구축하기 어렵다.
+
+- @import "tailwindcss";만 있는 globals.css는 "기본 설정을 모두 사용하겠다"는 의미이며, 여기에 나만의 디자인 시스템을 @theme 블록으로 점진적으로 구축해야 한다.
+  - @theme 블록: 기본 토큰 정의 (Colors, Typography, Spacing)
+  - @layer components: 재사용 가능한 컴포넌트들의 스타일 클래스를 정의
+  
 ### 1. 툴킷 개요 및 특징
 
 - **idea-to-build**는 아이디어에서 시작해 **AI 에이전트 CLI**와의 협업으로 Next.js 15+ App Router 및 Tailwind 4.x 기반의 UI/UX 애플리케이션을 만든다.
 - **idea-to-build**는 AI와의 효율적인 협업을 위해 공통의 용어집과 workflow를 구축한다.
-- 단순한 prompt로부터 전체 App이 만들어지는 big-bang approach 대신에, 내 의도를 담은 AGENT.md 로부터 시작하여 점차 만들고자 하는 App으로 항해 나간다.
+- 단순한 prompt로부터 전체 App이 만들어지는 big-bang approach 대신에, 내 의도를 담은 AGENTS.md 로부터 시작하여 점차 만들고자 하는 App으로 항해 나간다.
 - idea로부터 NextJS app으로 만들기 위해 다양한 문서화 작업을 하게 되며, 이들 문서가 context가 되어 이를 기준으로 AI와 대화 하며 작업한다.
 - 용어집과 문서를 기반으로 작업이 진행되므로, 특정 AI  Agent tool에 종속되지 않으며, 토큰을 효율적으로 사용할 수 있도록 한다.
 
@@ -40,15 +49,16 @@ https://tailwindcss.com/blog/tailwindcss-v4#css-first-configuration
 일종의 미리 저장된 prompt 혹은 workflow라고도 볼 수 있다.
 
 *   **`app:convert`**: convert 'aistudio' generated react app into NextJS app.
+*   **`app:buid`**:   `design-spec.md`과 `globals.css`을 기반으로 실제 동작하는 NextJS 및 tailwind 기반 App 코드를 생성한다.
+*   **`app:extract`**: 생성된 프로토타입 app에 /style-guide page 와 storybook page를 생성하고, 이를 바탕으로 추가적인 개선이 가능하도록 한다.
+*   **`app:space`**: 앱의 핵심 사용자 활동 공간(예: 담벼락, 할일 목록, 대시보드)을 AI와 함께 설계하고, 각 공간에 대한 blueprint.md 작성한다.
+*   **`app:struct`**: 생성된 디자인 에셋과 공간 및 page 설계를 바탕으로 기술적인 `design-spec.md` 문서를 작성한다.
 
-*   **`plan:init`**: 사용자의 아이디어를 몇 가지 질문을 통해 구체화하고, `PRD.md`와 `AGENT.md` 초안을 자동 생성한다.
-*   **`plan:it`**: 특정 작업에 대한 상세 계획을 ./plan 폴더 안에 작성한다.
-*   **`ds:extract`**: 사용자가 제공한 벤치마크 사이트 URL이나 스크린샷을 AI가 분석하여 프로젝트의 `style-guide.md`와 `tokens.json`을 자동으로 추출한다.
-*   **`ds:visualize`**: 생성된 프로토타입에 사용자가 디자인 및 기능에 대한 피드백을 직접 남길 수 있는 플로팅 버튼을 추가한다. 이 피드백은 다음 개선 사이클의 입력값으로 활용된다.
-*   **`ds:refine`**: 생성된 프로토타입에 사용자가 디자인 및 기능에 대한 피드백을 직접 남길 수 있는 플로팅 버튼을 추가한다. 이 피드백은 다음 개선 사이클의 입력값으로 활용된다.
-*   **`spec:space`**: 앱의 핵심 사용자 활동 공간(예: 담벼락, 할일 목록, 대시보드)을 AI와 함께 설계하고, 각 공간에 대한 각각의 single page react html을 작성한다. blueprint.md 작성.
-*   **`spec:design`**: 생성된 디자인 에셋과 공간 및 page 설계를 바탕으로 기술적인 `design-spec.md` 문서를 작성한다.
-*   **`app:buid`**: `design-spec.md`과 `tokens.json`을 기반으로 실제 동작하는 NextJS 및 tailwind 기반 App 코드를 생성한다.
+*   **`app:init`**: 사용자의 아이디어를 몇 가지 질문을 통해 구체화하고, `PRD.md`와 `AGENTS.md` 초안을 자동 생성한다.
+*   **`app:plan`**: 특정 작업에 대한 상세 계획을 ./plan 폴더 안에 작성한다.
+
+*   **`app:uidesign`**: 사용자가 제공한 벤치마크 사이트 URL이나 UI sample을 AI가 분석하여 프로젝트의 디자인 시스템 요소를 자동으로 추출한다.
+
 
 ### 3. 폴더 구조
 
@@ -62,25 +72,26 @@ idea-to-build/
 │   │   │   └── page.jsx
 │   │   ├── globals.css          # 토큰 기반 전역 스타일 자동 생성
 │   │   └── ...
+│   ├── source/
+│   │   ├── my-project/             # aistudio build로 만든 react app
+│   │   ├── blueprint.md             # 앱 페이지 설계 문서
+│   │   ├── stitch/             # stitch로 만든 페이지별 샘플 UI
+│   │   ├── html/             # 페이지별 샘플 HTML
+│   │   │   └── app_page_sample.html
+│   │   └── images/                  # 시각 자료
+│   ├── specs/
+│   │   ├── plan.md           # 전체 앱 개발 task 작업 계획
+│   │   ├── design-spec.md           # 전체 앱 구현을 위한 설계 문서
+│   │   ├── ui_elements_summary.md   # UI 요소 추출 및 설명 문서
+│   │   └── style_tokens.md          # 토큰 및 스타일 정의 문서
 │   └── tokens.json              # 디자인 토큰
 │
 ├── scripts/
 │   ├── generate-styleguide.js   # 토큰 → Style Guide 페이지 생성
 │   └── ai-cli.js                # AI 명령 기반 코드 생성/수정 CLI
 │
-├── source/
-│   ├── blueprint.md             # 앱 페이지 설계 문서
-│   ├── url/             # 페이지별 샘플 web link url
-│   ├── html/             # 페이지별 샘플 HTML
-│   │   └── app_page_sample.html
-│   └── images/                  # 시각 자료
-│
-├── specs/
-│   ├── design-spec.md           # 전체 앱 구현을 위한 설계 문서
-│   ├── ui_elements_summary.md   # UI 요소 추출 및 설명 문서
-│   └── style_tokens.md          # 토큰 및 스타일 정의 문서
-│
-└── AGENT.md                     # AI & Dev 공통 컨텍스트 가이드
+├── docs/
+└── AGENTS.md                     # AI & Dev 공통 컨텍스트 가이드
 ```
 
 ---

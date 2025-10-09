@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design - Modals</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex h-screen w-full flex-col">
+<header class="flex flex-shrink-0 items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-10 py-4">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Design System</h2>
+</div>
+<nav class="flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+<a class="hover:text-primary dark:hover:text-primary" href="#">Overview</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Tutorials</a>
+<a class="text-primary font-semibold" href="#">Components</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Patterns</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Resources</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Examples</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light text-gray-500 hover:bg-gray-200 dark:bg-background-dark dark:text-gray-400 dark:hover:bg-gray-700/50">
+<span class="material-symbols-outlined"> help </span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZJee1yPDWng9JwXrC0oThxmCbRs6pOgBIQpCDI5WGqwaa0PcRHrZufyg0yuaZWzZmQ5brxqrVg80KaBX78EKBpaA66vGDoVpmgw9NlEgZieIrUKOp6BlyUm7xHyCFNKvxRdfH9bLh_oHGrIWL1QSKMrxIuYJS9JU57DYC1qEcMIT0m4aJTz8H-QA9YpHVotAKG74omuxfn5nmTYgQep_wkPbxKVz8ktRMR5V0ZvJuYcZBqa2ta4Py_9GlAqV9AXHQy0dVvLsomrI");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/10 py-6">
+<nav class="flex flex-col gap-1 px-4">
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> widgets </span>
+              Buttons
+            </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> check_box </span>
+              Checkboxes
+            </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> toggle_on </span>
+              Switches
+            </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> text_fields </span>
+              Inputs
+            </a>
+<a class="flex items-center gap-3 rounded-md bg-primary/10 px-3 py-2 text-sm font-semibold text-primary dark:bg-primary/20 dark:text-primary" href="#">
+<span class="material-symbols-outlined text-lg"> picture_in_picture </span>
+              Modals
+            </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> list_alt </span>
+              Forms
+            </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> dvr </span>
+              Tables
+            </a>
+</nav>
+</aside>
+<main class="flex-1 overflow-y-auto p-10">
+<div class="w-full max-w-5xl">
+<div class="mb-12 border-b border-gray-200 dark:border-gray-700/50 pb-6">
+<h1 class="text-4xl font-bold tracking-tighter text-gray-900 dark:text-white">Modals</h1>
+<p class="mt-2 max-w-2xl text-base text-gray-500 dark:text-gray-400">
+              Modals are dialog boxes that appear on top of the main content to provide critical information or require user interaction. They are used for alerts,
+              confirmations, forms, and other temporary interactions.
+            </p>
+</div>
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Alert Modal</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Used to convey important information that the user must acknowledge.</p>
+<div class="mt-auto">
+<button class="rounded bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  Show Alert
+                </button>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Confirmation Modal</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Asks the user to confirm a potentially destructive or irreversible action.</p>
+<div class="mt-auto">
+<button class="rounded bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  Show Confirmation
+                </button>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Information Modal</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Displays supplementary details or content without requiring an action.</p>
+<div class="mt-auto">
+<button class="rounded bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  Show Information
+                </button>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Form Modal</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Allows users to input data or complete a task within a modal dialog.</p>
+<div class="mt-auto">
+<button class="rounded bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  Show Form
+                </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

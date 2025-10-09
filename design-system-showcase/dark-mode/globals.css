@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* dark variant 정의 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 라이트 모드 기본 테마 */
+@theme {
+  --color-background-light: #f9f9f9;
+  --color-background-dark: #1f2937;
+  --color-text-light: #1f2937;
+  --color-text-dark: #f3f4f6;
+
+  --color-primary: #3b82f6;
+  --color-secondary: #6b7280;
+  --color-accent: #10b981;
+
+  --color-card-light: #ffffff;
+  --color-card-dark: #2d3748;
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #374151;
+}
+
+/* 다크 모드 전환 시 변수 오버라이드 */
+@layer theme {
+  .dark {
+    --color-background-light: #1f2937;
+    --color-background-dark: #111827;
+    --color-text-light: #f3f4f6;
+    --color-text-dark: #d1d5db;
+
+    --color-card-light: #2d3748;
+    --color-card-dark: #1f2937;
+    --color-border-light: #374151;
+    --color-border-dark: #4b5563;
+  }
+}
+
+/* base layer */
+@layer base {
+  body {
+    @apply text-gray-800 dark:text-gray-200 bg-background-light dark:bg-background-dark transition-colors duration-300;
+  }
+}
+
+/* utilities: Tailwind 클래스에서 사용할 변수명 정의 */
+@layer utilities {
+  .bg-background-light {
+    background-color: var(--color-background-light);
+  }
+  .bg-background-dark {
+    background-color: var(--color-background-dark);
+  }
+  .text-text-light {
+    color: var(--color-text-light);
+  }
+  .text-text-dark {
+    color: var(--color-text-dark);
+  }
+  .bg-card-light {
+    background-color: var(--color-card-light);
+  }
+  .bg-card-dark {
+    background-color: var(--color-card-dark);
+  }
+  .border-border-light {
+    border-color: var(--color-border-light);
+  }
+  .border-border-dark {
+    border-color: var(--color-border-dark);
+  }
+}

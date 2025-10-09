@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design - Tables</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        display: ["Inter"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex h-screen w-full flex-col">
+<header class="flex flex-shrink-0 items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-10 py-4">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Design System</h2>
+</div>
+<nav class="flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+<a class="hover:text-primary dark:hover:text-primary" href="#">Overview</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Tutorials</a>
+<a class="text-primary font-semibold" href="#">Components</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Patterns</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Resources</a>
+<a class="hover:text-primary dark:hover:text-primary" href="#">Examples</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-background-light text-gray-500 hover:bg-gray-200 dark:bg-background-dark dark:text-gray-400 dark:hover:bg-gray-700/50">
+<span class="material-symbols-outlined"> help </span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZJee1yPDWng9JwXrC0oThxmCbRs6pOgBIQpCDI5WGqwaa0PcRHrZufyg0yuaZWzZmQ5brxqrVg80KaBX78EKBpaA66vGDoVpmgw9NlEgZieIrUKOp6BlyUm7xHyCFNKvxRdfH9bLh_oHGrIWL1QSKMrxIuYJS9JU57DYC1qEcMIT0m4aJTz8H-QA9YpHVotAKG74omuxfn5nmTYgQep_wkPbxKVz8ktRMR5V0ZvJuYcZBqa2ta4Py_9GlAqV9AXHQy0dVvLsomrI");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/10 py-6">
+<nav class="flex flex-col gap-1 px-4">
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> widgets </span>
+                        Buttons
+                    </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> check_box </span>
+                        Checkboxes
+                    </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> toggle_on </span>
+                        Switches
+                    </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> text_fields </span>
+                        Inputs
+                    </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> picture_in_picture </span>
+                        Modals
+                    </a>
+<a class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/50" href="#">
+<span class="material-symbols-outlined text-lg"> list_alt </span>
+                        Forms
+                    </a>
+<a class="flex items-center gap-3 rounded-md bg-primary/10 px-3 py-2 text-sm font-semibold text-primary dark:bg-primary/20 dark:text-primary" href="#">
+<span class="material-symbols-outlined text-lg"> dvr </span>
+                        Tables
+                    </a>
+</nav>
+</aside>
+<main class="flex-1 overflow-y-auto p-10">
+<div class="w-full max-w-6xl mx-auto">
+<div class="mb-12 border-b border-gray-200 dark:border-gray-700/50 pb-6">
+<h1 class="text-4xl font-bold tracking-tighter text-gray-900 dark:text-white">Tables</h1>
+<p class="mt-2 max-w-2xl text-base text-gray-500 dark:text-gray-400">
+                            Tables are used to organize and display data in a structured format. They can range from simple static tables to complex data grids with sorting, filtering, and pagination.
+                        </p>
+</div>
+<div class="space-y-12">
+<div class="flex flex-col gap-4">
+<h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Basic Table</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">A simple table for displaying static data without any interactive elements.</p>
+<div class="mt-2 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-gray-200 dark:border-gray-700/50">
+<tr>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">Product</th>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">SKU</th>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">Price</th>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700/50">
+<td class="py-3">Wireless Headphones</td>
+<td class="py-3">SKU-001</td>
+<td class="py-3">$149.99</td>
+<td class="py-3"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">In Stock</span></td>
+</tr>
+<tr>
+<td class="py-3">Smartwatch</td>
+<td class="py-3">SKU-002</td>
+<td class="py-3">$299.99</td>
+<td class="py-3"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">In Stock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Data Table with Pagination</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">A table for larger datasets with pagination controls to navigate through pages.</p>
+<div class="mt-2 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-gray-200 dark:border-gray-700/50">
+<tr>
+<th class="p-4 font-semibold text-gray-900 dark:text-white">Order ID</th>
+<th class="p-4 font-semibold text-gray-900 dark:text-white">Customer</th>
+<th class="p-4 font-semibold text-gray-900 dark:text-white">Date</th>
+<th class="p-4 font-semibold text-gray-900 dark:text-white">Total</th>
+<th class="p-4 font-semibold text-gray-900 dark:text-white">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700/50">
+<td class="p-4">#12345</td>
+<td class="p-4">John Doe</td>
+<td class="p-4">2023-10-26</td>
+<td class="p-4">$120.50</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-300">Pending</span></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700/50">
+<td class="p-4">#12346</td>
+<td class="p-4">Jane Smith</td>
+<td class="p-4">2023-10-25</td>
+<td class="p-4">$89.99</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/50 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">Shipped</span></td>
+</tr>
+<tr>
+<td class="p-4">#12347</td>
+<td class="p-4">Alice Johnson</td>
+<td class="p-4">2023-10-24</td>
+<td class="p-4">$250.00</td>
+<td class="p-4"><span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">Delivered</span></td>
+</tr>
+</tbody>
+</table>
+<div class="flex items-center justify-between border-t border-gray-200 dark:border-gray-700/50 px-4 py-3">
+<p class="text-sm text-gray-500 dark:text-gray-400">Showing 1 to 3 of 10 results</p>
+<div class="flex items-center gap-2">
+<button class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base"> chevron_left </span></button>
+<button class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-base"> chevron_right </span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Sortable Table</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">A table where columns can be sorted in ascending or descending order.</p>
+<div class="mt-2 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/20 p-6">
+<table class="w-full text-left text-sm">
+<thead class="border-b border-gray-200 dark:border-gray-700/50">
+<tr>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">
+<a class="group inline-flex items-center gap-1 hover:text-primary" href="#">
+                                                    User
+                                                    <span class="material-symbols-outlined text-base opacity-0 group-hover:opacity-100">swap_vert</span>
+</a>
+</th>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">
+<a class="group inline-flex items-center gap-1 text-primary" href="#">
+                                                    Email
+                                                    <span class="material-symbols-outlined text-base">arrow_downward</span>
+</a>
+</th>
+<th class="py-3 font-semibold text-gray-900 dark:text-white">
+<a class="group inline-flex items-center gap-1 hover:text-primary" href="#">
+                                                    Role
+                                                    <span class="material-symbols-outlined text-base opacity-0 group-hover:opacity-100">swap_vert</span>
+</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700/50">
+<td class="py-3">Emily Carter</td>
+<td class="py-3">emily.carter@example.com</td>
+<td class="py-3">Admin</td>
+</tr>
+<tr>
+<td class="py-3">Michael Lee</td>
+<td class="py-3">michael.lee@example.com</td>
+<td class="py-3">Editor</td>
+</tr>
+<tr>
+<td class="py-3">Sarah Chen</td>
+<td class="py-3">sarah.chen@example.com</td>
+<td class="py-3">Viewer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
