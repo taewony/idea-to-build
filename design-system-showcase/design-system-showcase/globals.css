@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Tailwind 4.1 : CDN의 tailwind.config에 대응하는 theme 정의 */
+@theme {
+  --color-primary: #137fec;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #101922;
+
+  --font-display: "Inter", sans-serif;
+
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+/* 다크모드 적용 기준: Tailwind 4에서는 darkMode: "class" 기본값 */
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-background-light);
+  color: rgb(31, 41, 55); /* text-gray-800 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: var(--color-background-dark);
+  color: rgb(229, 231, 235); /* text-gray-200 */
+}
+
+/* 필요 시 컴포넌트 단위 확장도 가능 */
+@utility .bg-primary {
+  background-color: var(--color-primary);
+}
+
+@utility .text-primary {
+  color: var(--color-primary);
+}

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* ① 기본 테마 정의 (Light Mode) */
+@theme {
+  --color-primary: #137fec;
+  --color-background: #f6f7f8;
+  --color-foreground: #1f2937;
+  --color-card-bg: #ffffff;
+  --color-sidebar-bg: #1a1a2e;
+  --color-sidebar-foreground: #e0e0e0;
+  --color-border: #e5e7eb;
+  --color-hover-bg: #162447;
+  --color-sidebar-hover-bg: #162447;
+  --color-sidebar-muted-foreground: #8a8a9e;
+
+  --font-display: "Inter", sans-serif;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+/* ② 다크 모드 변수 재정의 */
+@layer base {
+  .dark {
+    --color-background: #101922;
+    --color-foreground: #e5e7eb;
+    --color-card-bg: #1f2937;
+    --color-sidebar-bg: #1f2937;
+    --color-sidebar-foreground: #e5e7eb;
+    --color-border: #374151;
+    --color-hover-bg: #374151;
+    --color-sidebar-hover-bg: #374151;
+    --color-sidebar-muted-foreground: #9ca3af;
+  }
+}
+
+/* ③ body 기본 스타일 설정 */
+@layer base {
+  body {
+    margin: 0;
+    font-family: var(--font-display);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
