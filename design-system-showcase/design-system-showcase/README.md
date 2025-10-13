@@ -7,6 +7,9 @@
 This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1STxn_8piasBu1_6dSpkAH-dVbgyAHIfD
+It's UI was designed from Stitch: https://stitch.withgoogle.com/projects/6169258430134091492
+
+Tailwind v3.x and CDN site being used.
 
 ## Run Locally
 
