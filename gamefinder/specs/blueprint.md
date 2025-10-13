@@ -1,4 +1,4 @@
-# GameFinder Application Blueprint
+# GameFinder (NextJS) Application Blueprint
 
 This document outlines the architectural blueprint for the GameFinder application, detailing its pages, components, and key interactive elements.
 
